@@ -18,7 +18,6 @@ lovelace:
       icon: mdi:lightbulb-group-outline
       show_in_sidebar: true
       filename: dashboards/svet.yaml
-      theme: wb_svet
 
 automation: !include automations.yaml
 script: !include scripts.yaml

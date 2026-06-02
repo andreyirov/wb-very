@@ -1,18 +1,11 @@
 # Панель управления светом Wiren Board
-# Требует перезагрузки Lovelace после первого деплоя
-
-x-light-tile: &light_tile
-  type: tile
-  vertical: true
-  features:
-    - type: light-brightness
-    - type: light-color-temp
 
 title: Свет
 views:
   - title: Дом
     path: dom
     icon: mdi:home-lightbulb-outline
+    theme: wb_svet
     type: sections
     max_columns: 2
     sections:
@@ -33,10 +26,9 @@ views:
                   service: script.svet_vse_vyklyuchit
               - type: markdown
                 content: >
-                  {% set lights = states.light | rejectattr('entity_id','search','sun') | list %}
-                  {% set on = lights | selectattr('state','eq','on') | list | count %}
+                  {% set lights = states.light | rejectattr(entity_id,search,sun) | list %}
+                  {% set on = lights | selectattr(state,eq,on) | list | count %}
                   **Сейчас горит:** {{ on }} / {{ lights | count }}
-
       - type: grid
         columns: 1
         cards:
@@ -47,22 +39,38 @@ views:
             columns: 2
             square: false
             cards:
-              - <<: *light_tile
-                entity: light.kukhnia_fartuk
-                name: Фартук
-                icon: mdi:led-strip-variant
-              - <<: *light_tile
-                entity: light.kukhnia_shkaf_levo
-                name: Шкаф L
-                icon: mdi:cabinet
-              - <<: *light_tile
-                entity: light.kukhnia_shkaf_pravo
-                name: Шкаф R
-                icon: mdi:cabinet
-              - <<: *light_tile
-                entity: light.kukhnia_potolok
-                name: Потолок
-                icon: mdi:ceiling-light
+- type: tile
+  entity: light.kukhnia_fartuk
+  name: Фартук
+  icon: mdi:led-strip-variant
+  vertical: true
+  features:
+    - type: light-brightness
+    - type: light-color-temp
+- type: tile
+  entity: light.kukhnia_shkaf_levo
+  name: Шкаф L
+  icon: mdi:cabinet
+  vertical: true
+  features:
+    - type: light-brightness
+    - type: light-color-temp
+- type: tile
+  entity: light.kukhnia_shkaf_pravo
+  name: Шкаф R
+  icon: mdi:cabinet
+  vertical: true
+  features:
+    - type: light-brightness
+    - type: light-color-temp
+- type: tile
+  entity: light.kukhnia_potolok
+  name: Потолок
+  icon: mdi:ceiling-light
+  vertical: true
+  features:
+    - type: light-brightness
+    - type: light-color-temp
 
       - type: grid
         columns: 1
@@ -74,22 +82,38 @@ views:
             columns: 2
             square: false
             cards:
-              - <<: *light_tile
-                entity: light.gostinaia_shtory_okno2
-                name: Шторы ок.2
-                icon: mdi:curtains
-              - <<: *light_tile
-                entity: light.gostinaia_shtory_okno3
-                name: Шторы ок.3
-                icon: mdi:curtains
-              - <<: *light_tile
-                entity: light.gostinaia_potolok
-                name: Потолок
-                icon: mdi:ceiling-light-multiple
-              - <<: *light_tile
-                entity: light.gostinaia_liustra_stol
-                name: Люстра стол
-                icon: mdi:chandelier
+- type: tile
+  entity: light.gostinaia_shtory_okno2
+  name: Шторы ок.2
+  icon: mdi:curtains
+  vertical: true
+  features:
+    - type: light-brightness
+    - type: light-color-temp
+- type: tile
+  entity: light.gostinaia_shtory_okno3
+  name: Шторы ок.3
+  icon: mdi:curtains
+  vertical: true
+  features:
+    - type: light-brightness
+    - type: light-color-temp
+- type: tile
+  entity: light.gostinaia_potolok
+  name: Потолок
+  icon: mdi:ceiling-light-multiple
+  vertical: true
+  features:
+    - type: light-brightness
+    - type: light-color-temp
+- type: tile
+  entity: light.gostinaia_liustra_stol
+  name: Люстра стол
+  icon: mdi:chandelier
+  vertical: true
+  features:
+    - type: light-brightness
+    - type: light-color-temp
 
       - type: grid
         columns: 1
@@ -101,22 +125,38 @@ views:
             columns: 2
             square: false
             cards:
-              - <<: *light_tile
-                entity: light.spalnia_shtory
-                name: Шторы
-                icon: mdi:curtains
-              - <<: *light_tile
-                entity: light.spalnia_liustra
-                name: Люстра
-                icon: mdi:chandelier
-              - <<: *light_tile
-                entity: light.prikrovatnyi_stena
-                name: У стены
-                icon: mdi:wall-sconce
-              - <<: *light_tile
-                entity: light.prikrovatnyi_okno
-                name: У окна
-                icon: mdi:wall-sconce-flat
+- type: tile
+  entity: light.spalnia_shtory
+  name: Шторы
+  icon: mdi:curtains
+  vertical: true
+  features:
+    - type: light-brightness
+    - type: light-color-temp
+- type: tile
+  entity: light.spalnia_liustra
+  name: Люстра
+  icon: mdi:chandelier
+  vertical: true
+  features:
+    - type: light-brightness
+    - type: light-color-temp
+- type: tile
+  entity: light.prikrovatnyi_stena
+  name: У стены
+  icon: mdi:wall-sconce
+  vertical: true
+  features:
+    - type: light-brightness
+    - type: light-color-temp
+- type: tile
+  entity: light.prikrovatnyi_okno
+  name: У окна
+  icon: mdi:wall-sconce-flat
+  vertical: true
+  features:
+    - type: light-brightness
+    - type: light-color-temp
 
       - type: grid
         columns: 1
@@ -128,14 +168,22 @@ views:
             columns: 2
             square: false
             cards:
-              - <<: *light_tile
-                entity: light.kabinet_potolok
-                name: Потолок
-                icon: mdi:ceiling-light
-              - <<: *light_tile
-                entity: light.kabinet_stol
-                name: Стол
-                icon: mdi:desk-lamp
+- type: tile
+  entity: light.kabinet_potolok
+  name: Потолок
+  icon: mdi:ceiling-light
+  vertical: true
+  features:
+    - type: light-brightness
+    - type: light-color-temp
+- type: tile
+  entity: light.kabinet_stol
+  name: Стол
+  icon: mdi:desk-lamp
+  vertical: true
+  features:
+    - type: light-brightness
+    - type: light-color-temp
 
       - type: grid
         columns: 1
@@ -147,22 +195,38 @@ views:
             columns: 2
             square: false
             cards:
-              - <<: *light_tile
-                entity: light.detskaia_shtory
-                name: Шторы
-                icon: mdi:curtains
-              - <<: *light_tile
-                entity: light.detskaia_liustra
-                name: Люстра
-                icon: mdi:chandelier
-              - <<: *light_tile
-                entity: light.detskaia_rabochaia_zona
-                name: Рабочая зона
-                icon: mdi:desk-lamp
-              - <<: *light_tile
-                entity: light.detskaia_stena
-                name: Стена
-                icon: mdi:led-strip-variant
+- type: tile
+  entity: light.detskaia_shtory
+  name: Шторы
+  icon: mdi:curtains
+  vertical: true
+  features:
+    - type: light-brightness
+    - type: light-color-temp
+- type: tile
+  entity: light.detskaia_liustra
+  name: Люстра
+  icon: mdi:chandelier
+  vertical: true
+  features:
+    - type: light-brightness
+    - type: light-color-temp
+- type: tile
+  entity: light.detskaia_rabochaia_zona
+  name: Рабочая зона
+  icon: mdi:desk-lamp
+  vertical: true
+  features:
+    - type: light-brightness
+    - type: light-color-temp
+- type: tile
+  entity: light.detskaia_stena
+  name: Стена
+  icon: mdi:led-strip-variant
+  vertical: true
+  features:
+    - type: light-brightness
+    - type: light-color-temp
 
       - type: grid
         columns: 1
@@ -174,26 +238,44 @@ views:
             columns: 2
             square: false
             cards:
-              - <<: *light_tile
-                entity: light.koridor_podsvetka
-                name: Коридор LED
-                icon: mdi:led-strip-variant
-              - <<: *light_tile
-                entity: light.koridor_potolok
-                name: Коридор потолок
-                icon: mdi:ceiling-light
-              - <<: *light_tile
-                entity: light.vanna_potolok
-                name: Ванна
-                icon: mdi:shower-head
-              - <<: *light_tile
-                entity: light.postirochnaia_potolok
-                name: Постирочная
-                icon: mdi:washing-machine
+- type: tile
+  entity: light.koridor_podsvetka
+  name: Коридор LED
+  icon: mdi:led-strip-variant
+  vertical: true
+  features:
+    - type: light-brightness
+    - type: light-color-temp
+- type: tile
+  entity: light.koridor_potolok
+  name: Коридор потолок
+  icon: mdi:ceiling-light
+  vertical: true
+  features:
+    - type: light-brightness
+    - type: light-color-temp
+- type: tile
+  entity: light.vanna_potolok
+  name: Ванна
+  icon: mdi:shower-head
+  vertical: true
+  features:
+    - type: light-brightness
+    - type: light-color-temp
+- type: tile
+  entity: light.postirochnaia_potolok
+  name: Постирочная
+  icon: mdi:washing-machine
+  vertical: true
+  features:
+    - type: light-brightness
+    - type: light-color-temp
+
 
   - title: Комнаты
     path: komnaty
     icon: mdi:floor-plan
+    theme: wb_svet
     type: masonry
     cards:
       - type: glance
@@ -246,6 +328,7 @@ views:
   - title: Детально
     path: detail
     icon: mdi:tune-vertical
+    theme: wb_svet
     type: panel
     cards:
       - type: entities
