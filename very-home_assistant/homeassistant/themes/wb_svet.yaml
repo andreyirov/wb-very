@@ -1,0 +1,17 @@
+wb_svet:
+  modes:
+    dark:
+      primary-color: "#f4b942"
+      accent-color: "#f4b942"
+      ha-card-background: "rgba(30, 32, 38, 0.85)"
+      card-background-color: "rgba(30, 32, 38, 0.85)"
+      app-header-background-color: "#14161a"
+      sidebar-background-color: "#14161a"
+      paper-card-background-color: "rgba(30, 32, 38, 0.85)"
+      secondary-background-color: "#1e2026"
+      primary-background-color: "#0f1114"
+      divider-color: "rgba(255, 255, 255, 0.08)"
+      state-icon-active-color: "#f4b942"
+      state-icon-color: "#8b919a"
+      state-light-active-color: "#ffe08a"
+      state-light-inactive-color: "#4a4f57"

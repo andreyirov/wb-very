@@ -1,0 +1,30 @@
+svet_vse_vyklyuchit:
+  alias: "Свет — выключить всё"
+  icon: mdi:lightbulb-off-outline
+  mode: parallel
+  sequence:
+    - action: light.turn_off
+      target:
+        entity_id:
+          - light.kukhnia_fartuk
+          - light.kukhnia_shkaf_levo
+          - light.kukhnia_shkaf_pravo
+          - light.kukhnia_potolok
+          - light.gostinaia_shtory_okno2
+          - light.gostinaia_shtory_okno3
+          - light.gostinaia_potolok
+          - light.gostinaia_liustra_stol
+          - light.spalnia_shtory
+          - light.spalnia_liustra
+          - light.kabinet_potolok
+          - light.kabinet_stol
+          - light.prikrovatnyi_stena
+          - light.prikrovatnyi_okno
+          - light.detskaia_shtory
+          - light.detskaia_liustra
+          - light.detskaia_rabochaia_zona
+          - light.detskaia_stena
+          - light.koridor_podsvetka
+          - light.koridor_potolok
+          - light.vanna_potolok
+          - light.postirochnaia_potolok

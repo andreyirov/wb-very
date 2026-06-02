@@ -1,0 +1,276 @@
+# Панель управления светом Wiren Board
+# Требует перезагрузки Lovelace после первого деплоя
+
+x-light-tile: &light_tile
+  type: tile
+  vertical: true
+  features:
+    - type: light-brightness
+    - type: light-color-temp
+
+title: Свет
+views:
+  - title: Дом
+    path: dom
+    icon: mdi:home-lightbulb-outline
+    type: sections
+    max_columns: 2
+    sections:
+      - type: grid
+        columns: 1
+        cards:
+          - type: markdown
+            content: |
+              ## Освещение
+              Управление линиями Wiren Board · MQTT `192.168.180.10`
+          - type: horizontal-stack
+            cards:
+              - type: button
+                name: Выключить всё
+                icon: mdi:lightbulb-off-outline
+                tap_action:
+                  action: call-service
+                  service: script.svet_vse_vyklyuchit
+              - type: markdown
+                content: >
+                  {% set lights = states.light | rejectattr('entity_id','search','sun') | list %}
+                  {% set on = lights | selectattr('state','eq','on') | list | count %}
+                  **Сейчас горит:** {{ on }} / {{ lights | count }}
+
+      - type: grid
+        columns: 1
+        cards:
+          - type: heading
+            heading: Кухня
+            icon: mdi:stove
+          - type: grid
+            columns: 2
+            square: false
+            cards:
+              - <<: *light_tile
+                entity: light.kukhnia_fartuk
+                name: Фартук
+                icon: mdi:led-strip-variant
+              - <<: *light_tile
+                entity: light.kukhnia_shkaf_levo
+                name: Шкаф L
+                icon: mdi:cabinet
+              - <<: *light_tile
+                entity: light.kukhnia_shkaf_pravo
+                name: Шкаф R
+                icon: mdi:cabinet
+              - <<: *light_tile
+                entity: light.kukhnia_potolok
+                name: Потолок
+                icon: mdi:ceiling-light
+
+      - type: grid
+        columns: 1
+        cards:
+          - type: heading
+            heading: Гостиная
+            icon: mdi:sofa-outline
+          - type: grid
+            columns: 2
+            square: false
+            cards:
+              - <<: *light_tile
+                entity: light.gostinaia_shtory_okno2
+                name: Шторы ок.2
+                icon: mdi:curtains
+              - <<: *light_tile
+                entity: light.gostinaia_shtory_okno3
+                name: Шторы ок.3
+                icon: mdi:curtains
+              - <<: *light_tile
+                entity: light.gostinaia_potolok
+                name: Потолок
+                icon: mdi:ceiling-light-multiple
+              - <<: *light_tile
+                entity: light.gostinaia_liustra_stol
+                name: Люстра стол
+                icon: mdi:chandelier
+
+      - type: grid
+        columns: 1
+        cards:
+          - type: heading
+            heading: Спальня
+            icon: mdi:bed-king-outline
+          - type: grid
+            columns: 2
+            square: false
+            cards:
+              - <<: *light_tile
+                entity: light.spalnia_shtory
+                name: Шторы
+                icon: mdi:curtains
+              - <<: *light_tile
+                entity: light.spalnia_liustra
+                name: Люстра
+                icon: mdi:chandelier
+              - <<: *light_tile
+                entity: light.prikrovatnyi_stena
+                name: У стены
+                icon: mdi:wall-sconce
+              - <<: *light_tile
+                entity: light.prikrovatnyi_okno
+                name: У окна
+                icon: mdi:wall-sconce-flat
+
+      - type: grid
+        columns: 1
+        cards:
+          - type: heading
+            heading: Кабинет
+            icon: mdi:desk
+          - type: grid
+            columns: 2
+            square: false
+            cards:
+              - <<: *light_tile
+                entity: light.kabinet_potolok
+                name: Потолок
+                icon: mdi:ceiling-light
+              - <<: *light_tile
+                entity: light.kabinet_stol
+                name: Стол
+                icon: mdi:desk-lamp
+
+      - type: grid
+        columns: 1
+        cards:
+          - type: heading
+            heading: Детская
+            icon: mdi:teddy-bear
+          - type: grid
+            columns: 2
+            square: false
+            cards:
+              - <<: *light_tile
+                entity: light.detskaia_shtory
+                name: Шторы
+                icon: mdi:curtains
+              - <<: *light_tile
+                entity: light.detskaia_liustra
+                name: Люстра
+                icon: mdi:chandelier
+              - <<: *light_tile
+                entity: light.detskaia_rabochaia_zona
+                name: Рабочая зона
+                icon: mdi:desk-lamp
+              - <<: *light_tile
+                entity: light.detskaia_stena
+                name: Стена
+                icon: mdi:led-strip-variant
+
+      - type: grid
+        columns: 1
+        cards:
+          - type: heading
+            heading: Коридор · санузел
+            icon: mdi:door-sliding
+          - type: grid
+            columns: 2
+            square: false
+            cards:
+              - <<: *light_tile
+                entity: light.koridor_podsvetka
+                name: Коридор LED
+                icon: mdi:led-strip-variant
+              - <<: *light_tile
+                entity: light.koridor_potolok
+                name: Коридор потолок
+                icon: mdi:ceiling-light
+              - <<: *light_tile
+                entity: light.vanna_potolok
+                name: Ванна
+                icon: mdi:shower-head
+              - <<: *light_tile
+                entity: light.postirochnaia_potolok
+                name: Постирочная
+                icon: mdi:washing-machine
+
+  - title: Комнаты
+    path: komnaty
+    icon: mdi:floor-plan
+    type: masonry
+    cards:
+      - type: glance
+        title: Кухня
+        entities:
+          - light.kukhnia_fartuk
+          - light.kukhnia_shkaf_levo
+          - light.kukhnia_shkaf_pravo
+          - light.kukhnia_potolok
+        state_color: true
+      - type: glance
+        title: Гостиная
+        entities:
+          - light.gostinaia_shtory_okno2
+          - light.gostinaia_shtory_okno3
+          - light.gostinaia_potolok
+          - light.gostinaia_liustra_stol
+        state_color: true
+      - type: glance
+        title: Спальня
+        entities:
+          - light.spalnia_shtory
+          - light.spalnia_liustra
+          - light.prikrovatnyi_stena
+          - light.prikrovatnyi_okno
+        state_color: true
+      - type: glance
+        title: Кабинет
+        entities:
+          - light.kabinet_potolok
+          - light.kabinet_stol
+        state_color: true
+      - type: glance
+        title: Детская
+        entities:
+          - light.detskaia_shtory
+          - light.detskaia_liustra
+          - light.detskaia_rabochaia_zona
+          - light.detskaia_stena
+        state_color: true
+      - type: glance
+        title: Коридор и прочее
+        entities:
+          - light.koridor_podsvetka
+          - light.koridor_potolok
+          - light.vanna_potolok
+          - light.postirochnaia_potolok
+        state_color: true
+
+  - title: Детально
+    path: detail
+    icon: mdi:tune-vertical
+    type: panel
+    cards:
+      - type: entities
+        title: Все линии света
+        show_header_toggle: true
+        entities:
+          - light.kukhnia_fartuk
+          - light.kukhnia_shkaf_levo
+          - light.kukhnia_shkaf_pravo
+          - light.kukhnia_potolok
+          - light.gostinaia_shtory_okno2
+          - light.gostinaia_shtory_okno3
+          - light.gostinaia_potolok
+          - light.gostinaia_liustra_stol
+          - light.spalnia_shtory
+          - light.spalnia_liustra
+          - light.prikrovatnyi_stena
+          - light.prikrovatnyi_okno
+          - light.kabinet_potolok
+          - light.kabinet_stol
+          - light.detskaia_shtory
+          - light.detskaia_liustra
+          - light.detskaia_rabochaia_zona
+          - light.detskaia_stena
+          - light.koridor_podsvetka
+          - light.koridor_potolok
+          - light.vanna_potolok
+          - light.postirochnaia_potolok

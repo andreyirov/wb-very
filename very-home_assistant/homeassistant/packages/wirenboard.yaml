@@ -1,0 +1,378 @@
+# Wiren Board MQTT — брокер 192.168.180.10 (wb8 в LAN)
+# Соответствие каналов: svet.md в корне репозитория
+
+x-wb-mdm3-defaults: &wb_mdm3_defaults
+  schema: default
+  brightness_scale: 100
+  payload_on: "1"
+  payload_off: "0"
+
+x-wb-led-ch-defaults: &wb_led_ch_defaults
+  schema: default
+  brightness_scale: 100
+  payload_on: "1"
+  payload_off: "0"
+
+x-wb-led-cct-defaults: &wb_led_cct_defaults
+  schema: default
+  brightness_scale: 100
+  payload_on: "1"
+  payload_off: "0"
+  color_temp_kelvin: true
+  color_temp_state_template: "{{ (2700 + (value | int(0)) * 38) | int }}"
+  color_temp_command_template: "{{ ((value | int - 2700) / 38) | round(0) | int }}"
+  supported_color_modes:
+    - color_temp
+
+mqtt:
+  - broker: 192.168.180.10
+    port: 1883
+    discovery: false
+
+  - light:
+      # ─── Кухня (wb-led_16, wb-mdm3_175) ───
+      - <<: *wb_led_ch_defaults
+        name: "Кухня — фартук"
+        object_id: kukhnia_fartuk
+        unique_id: wb_led_16_ch4
+        state_topic: "/devices/wb-led_16/controls/Channel 4"
+        command_topic: "/devices/wb-led_16/controls/Channel 4/on"
+        brightness_state_topic: "/devices/wb-led_16/controls/Channel 4 Brightness"
+        brightness_command_topic: "/devices/wb-led_16/controls/Channel 4 Brightness/on"
+        device:
+          name: "Кухня — фартук"
+          identifiers: [["wirenboard", "wb-led_16", "ch4"]]
+          manufacturer: Wiren Board
+          model: WB-LED 16
+          suggested_area: Кухня
+
+      - <<: *wb_led_ch_defaults
+        name: "Кухня — шкаф (лево)"
+        object_id: kukhnia_shkaf_levo
+        unique_id: wb_led_16_ch2
+        state_topic: "/devices/wb-led_16/controls/Channel 2"
+        command_topic: "/devices/wb-led_16/controls/Channel 2/on"
+        brightness_state_topic: "/devices/wb-led_16/controls/Channel 2 Brightness"
+        brightness_command_topic: "/devices/wb-led_16/controls/Channel 2 Brightness/on"
+        device:
+          name: "Кухня — шкаф (лево)"
+          identifiers: [["wirenboard", "wb-led_16", "ch2"]]
+          manufacturer: Wiren Board
+          model: WB-LED 16
+          suggested_area: Кухня
+
+      - <<: *wb_led_ch_defaults
+        name: "Кухня — шкаф (право)"
+        object_id: kukhnia_shkaf_pravo
+        unique_id: wb_led_16_ch3
+        state_topic: "/devices/wb-led_16/controls/Channel 3"
+        command_topic: "/devices/wb-led_16/controls/Channel 3/on"
+        brightness_state_topic: "/devices/wb-led_16/controls/Channel 3 Brightness"
+        brightness_command_topic: "/devices/wb-led_16/controls/Channel 3 Brightness/on"
+        device:
+          name: "Кухня — шкаф (право)"
+          identifiers: [["wirenboard", "wb-led_16", "ch3"]]
+          manufacturer: Wiren Board
+          model: WB-LED 16
+          suggested_area: Кухня
+
+      - <<: *wb_mdm3_defaults
+        name: "Кухня — потолок"
+        object_id: kukhnia_potolok
+        unique_id: wb_mdm3_175_k3
+        state_topic: "/devices/wb-mdm3_175/controls/K3"
+        command_topic: "/devices/wb-mdm3_175/controls/K3/on"
+        brightness_state_topic: "/devices/wb-mdm3_175/controls/Channel 3"
+        brightness_command_topic: "/devices/wb-mdm3_175/controls/Channel 3/on"
+        device:
+          name: "Кухня — потолок"
+          identifiers: [["wirenboard", "wb-mdm3_175", "k3"]]
+          manufacturer: Wiren Board
+          model: WB-MDM3 175
+          suggested_area: Кухня
+
+      # ─── Гостиная (wb-led_25, wb-mdm3_124, wb-mdm3_175) ───
+      - <<: *wb_led_cct_defaults
+        name: "Гостиная — шторы (окно 2)"
+        object_id: gostinaia_shtory_okno2
+        unique_id: wb_led_25_cct1
+        state_topic: "/devices/wb-led_25/controls/CCT1"
+        command_topic: "/devices/wb-led_25/controls/CCT1/on"
+        brightness_state_topic: "/devices/wb-led_25/controls/CCT1 Brightness"
+        brightness_command_topic: "/devices/wb-led_25/controls/CCT1 Brightness/on"
+        color_temp_state_topic: "/devices/wb-led_25/controls/CCT1 Temperature"
+        color_temp_command_topic: "/devices/wb-led_25/controls/CCT1 Temperature/on"
+        device:
+          name: "Гостиная — шторы (окно 2)"
+          identifiers: [["wirenboard", "wb-led_25", "cct1"]]
+          manufacturer: Wiren Board
+          model: WB-LED 25
+          suggested_area: Гостиная
+
+      - <<: *wb_led_cct_defaults
+        name: "Гостиная — шторы (окно 3)"
+        object_id: gostinaia_shtory_okno3
+        unique_id: wb_led_25_cct2
+        state_topic: "/devices/wb-led_25/controls/CCT2"
+        command_topic: "/devices/wb-led_25/controls/CCT2/on"
+        brightness_state_topic: "/devices/wb-led_25/controls/CCT2 Brightness"
+        brightness_command_topic: "/devices/wb-led_25/controls/CCT2 Brightness/on"
+        color_temp_state_topic: "/devices/wb-led_25/controls/CCT2 Temperature"
+        color_temp_command_topic: "/devices/wb-led_25/controls/CCT2 Temperature/on"
+        device:
+          name: "Гостиная — шторы (окно 3)"
+          identifiers: [["wirenboard", "wb-led_25", "cct2"]]
+          manufacturer: Wiren Board
+          model: WB-LED 25
+          suggested_area: Гостиная
+
+      - <<: *wb_mdm3_defaults
+        name: "Гостиная — потолок"
+        object_id: gostinaia_potolok
+        unique_id: wb_mdm3_175_k2
+        state_topic: "/devices/wb-mdm3_175/controls/K2"
+        command_topic: "/devices/wb-mdm3_175/controls/K2/on"
+        brightness_state_topic: "/devices/wb-mdm3_175/controls/Channel 2"
+        brightness_command_topic: "/devices/wb-mdm3_175/controls/Channel 2/on"
+        device:
+          name: "Гостиная — потолок"
+          identifiers: [["wirenboard", "wb-mdm3_175", "k2"]]
+          manufacturer: Wiren Board
+          model: WB-MDM3 175
+          suggested_area: Гостиная
+
+      - <<: *wb_mdm3_defaults
+        name: "Гостиная — люстра над столом"
+        object_id: gostinaia_liustra_stol
+        unique_id: wb_mdm3_124_k1
+        state_topic: "/devices/wb-mdm3_124/controls/K1"
+        command_topic: "/devices/wb-mdm3_124/controls/K1/on"
+        brightness_state_topic: "/devices/wb-mdm3_124/controls/Channel 1"
+        brightness_command_topic: "/devices/wb-mdm3_124/controls/Channel 1/on"
+        device:
+          name: "Гостиная — люстра над столом"
+          identifiers: [["wirenboard", "wb-mdm3_124", "k1"]]
+          manufacturer: Wiren Board
+          model: WB-MDM3 124
+          suggested_area: Гостиная
+
+      # ─── Спальня (wb-led_48, wb-mdm3_109) ───
+      - <<: *wb_led_cct_defaults
+        name: "Спальня — шторы"
+        object_id: spalnia_shtory
+        unique_id: wb_led_48_cct2
+        state_topic: "/devices/wb-led_48/controls/CCT2"
+        command_topic: "/devices/wb-led_48/controls/CCT2/on"
+        brightness_state_topic: "/devices/wb-led_48/controls/CCT2 Brightness"
+        brightness_command_topic: "/devices/wb-led_48/controls/CCT2 Brightness/on"
+        color_temp_state_topic: "/devices/wb-led_48/controls/CCT2 Temperature"
+        color_temp_command_topic: "/devices/wb-led_48/controls/CCT2 Temperature/on"
+        device:
+          name: "Спальня — шторы"
+          identifiers: [["wirenboard", "wb-led_48", "cct2"]]
+          manufacturer: Wiren Board
+          model: WB-LED 48
+          suggested_area: Спальня
+
+      - <<: *wb_mdm3_defaults
+        name: "Спальня — люстра"
+        object_id: spalnia_liustra
+        unique_id: wb_mdm3_109_k2
+        state_topic: "/devices/wb-mdm3_109/controls/K2"
+        command_topic: "/devices/wb-mdm3_109/controls/K2/on"
+        brightness_state_topic: "/devices/wb-mdm3_109/controls/Channel 2"
+        brightness_command_topic: "/devices/wb-mdm3_109/controls/Channel 2/on"
+        device:
+          name: "Спальня — люстра"
+          identifiers: [["wirenboard", "wb-mdm3_109", "k2"]]
+          manufacturer: Wiren Board
+          model: WB-MDM3 109
+          suggested_area: Спальня
+
+      # ─── Кабинет + прикроватные (wb-mdm3_209, wb-led_47) ───
+      - <<: *wb_mdm3_defaults
+        name: "Кабинет — потолок"
+        object_id: kabinet_potolok
+        unique_id: wb_mdm3_209_k3
+        state_topic: "/devices/wb-mdm3_209/controls/K3"
+        command_topic: "/devices/wb-mdm3_209/controls/K3/on"
+        brightness_state_topic: "/devices/wb-mdm3_209/controls/Channel 3"
+        brightness_command_topic: "/devices/wb-mdm3_209/controls/Channel 3/on"
+        device:
+          name: "Кабинет — потолок"
+          identifiers: [["wirenboard", "wb-mdm3_209", "k3"]]
+          manufacturer: Wiren Board
+          model: WB-MDM3 209
+          suggested_area: Кабинет
+
+      - <<: *wb_led_ch_defaults
+        name: "Кабинет — стол"
+        object_id: kabinet_stol
+        unique_id: wb_led_47_ch3
+        state_topic: "/devices/wb-led_47/controls/Channel 3"
+        command_topic: "/devices/wb-led_47/controls/Channel 3/on"
+        brightness_state_topic: "/devices/wb-led_47/controls/Channel 3 Brightness"
+        brightness_command_topic: "/devices/wb-led_47/controls/Channel 3 Brightness/on"
+        device:
+          name: "Кабинет — стол"
+          identifiers: [["wirenboard", "wb-led_47", "ch3"]]
+          manufacturer: Wiren Board
+          model: WB-LED 47
+          suggested_area: Кабинет
+
+      - <<: *wb_mdm3_defaults
+        name: "Прикроватный — у стены"
+        object_id: prikrovatnyi_stena
+        unique_id: wb_mdm3_209_k1
+        state_topic: "/devices/wb-mdm3_209/controls/K1"
+        command_topic: "/devices/wb-mdm3_209/controls/K1/on"
+        brightness_state_topic: "/devices/wb-mdm3_209/controls/Channel 1"
+        brightness_command_topic: "/devices/wb-mdm3_209/controls/Channel 1/on"
+        device:
+          name: "Прикроватный — у стены"
+          identifiers: [["wirenboard", "wb-mdm3_209", "k1"]]
+          manufacturer: Wiren Board
+          model: WB-MDM3 209
+          suggested_area: Спальня
+
+      - <<: *wb_mdm3_defaults
+        name: "Прикроватный — у окна"
+        object_id: prikrovatnyi_okno
+        unique_id: wb_mdm3_209_k2
+        state_topic: "/devices/wb-mdm3_209/controls/K2"
+        command_topic: "/devices/wb-mdm3_209/controls/K2/on"
+        brightness_state_topic: "/devices/wb-mdm3_209/controls/Channel 2"
+        brightness_command_topic: "/devices/wb-mdm3_209/controls/Channel 2/on"
+        device:
+          name: "Прикроватный — у окна"
+          identifiers: [["wirenboard", "wb-mdm3_209", "k2"]]
+          manufacturer: Wiren Board
+          model: WB-MDM3 209
+          suggested_area: Спальня
+
+      # ─── Детская (wb-led_48, wb-mdm3_201, wb-mdm3_109, wb-led_47) ───
+      - <<: *wb_led_cct_defaults
+        name: "Детская — шторы"
+        object_id: detskaia_shtory
+        unique_id: wb_led_48_cct1
+        state_topic: "/devices/wb-led_48/controls/CCT1"
+        command_topic: "/devices/wb-led_48/controls/CCT1/on"
+        brightness_state_topic: "/devices/wb-led_48/controls/CCT1 Brightness"
+        brightness_command_topic: "/devices/wb-led_48/controls/CCT1 Brightness/on"
+        color_temp_state_topic: "/devices/wb-led_48/controls/CCT1 Temperature"
+        color_temp_command_topic: "/devices/wb-led_48/controls/CCT1 Temperature/on"
+        device:
+          name: "Детская — шторы"
+          identifiers: [["wirenboard", "wb-led_48", "cct1"]]
+          manufacturer: Wiren Board
+          model: WB-LED 48
+          suggested_area: Детская
+
+      - <<: *wb_mdm3_defaults
+        name: "Детская — люстра"
+        object_id: detskaia_liustra
+        unique_id: wb_mdm3_201_k2
+        state_topic: "/devices/wb-mdm3_201/controls/K2"
+        command_topic: "/devices/wb-mdm3_201/controls/K2/on"
+        brightness_state_topic: "/devices/wb-mdm3_201/controls/Channel 2"
+        brightness_command_topic: "/devices/wb-mdm3_201/controls/Channel 2/on"
+        device:
+          name: "Детская — люстра"
+          identifiers: [["wirenboard", "wb-mdm3_201", "k2"]]
+          manufacturer: Wiren Board
+          model: WB-MDM3 201
+          suggested_area: Детская
+
+      - <<: *wb_mdm3_defaults
+        name: "Детская — рабочая зона"
+        object_id: detskaia_rabochaia_zona
+        unique_id: wb_mdm3_109_k1
+        state_topic: "/devices/wb-mdm3_109/controls/K1"
+        command_topic: "/devices/wb-mdm3_109/controls/K1/on"
+        brightness_state_topic: "/devices/wb-mdm3_109/controls/Channel 1"
+        brightness_command_topic: "/devices/wb-mdm3_109/controls/Channel 1/on"
+        device:
+          name: "Детская — рабочая зона"
+          identifiers: [["wirenboard", "wb-mdm3_109", "k1"]]
+          manufacturer: Wiren Board
+          model: WB-MDM3 109
+          suggested_area: Детская
+
+      - <<: *wb_led_ch_defaults
+        name: "Детская — подсветка стены"
+        object_id: detskaia_stena
+        unique_id: wb_led_47_ch2
+        state_topic: "/devices/wb-led_47/controls/Channel 2"
+        command_topic: "/devices/wb-led_47/controls/Channel 2/on"
+        brightness_state_topic: "/devices/wb-led_47/controls/Channel 2 Brightness"
+        brightness_command_topic: "/devices/wb-led_47/controls/Channel 2 Brightness/on"
+        device:
+          name: "Детская — подсветка стены"
+          identifiers: [["wirenboard", "wb-led_47", "ch2"]]
+          manufacturer: Wiren Board
+          model: WB-LED 47
+          suggested_area: Детская
+
+      # ─── Коридор (wb-led_36, wb-mdm3_110) ───
+      - <<: *wb_led_cct_defaults
+        name: "Коридор — подсветка"
+        object_id: koridor_podsvetka
+        unique_id: wb_led_36_cct1
+        state_topic: "/devices/wb-led_36/controls/CCT1"
+        command_topic: "/devices/wb-led_36/controls/CCT1/on"
+        brightness_state_topic: "/devices/wb-led_36/controls/CCT1 Brightness"
+        brightness_command_topic: "/devices/wb-led_36/controls/CCT1 Brightness/on"
+        color_temp_state_topic: "/devices/wb-led_36/controls/CCT1 Temperature"
+        color_temp_command_topic: "/devices/wb-led_36/controls/CCT1 Temperature/on"
+        device:
+          name: "Коридор — подсветка"
+          identifiers: [["wirenboard", "wb-led_36", "cct1"]]
+          manufacturer: Wiren Board
+          model: WB-LED 36
+          suggested_area: Коридор
+
+      - <<: *wb_mdm3_defaults
+        name: "Коридор — потолок"
+        object_id: koridor_potolok
+        unique_id: wb_mdm3_110_k3
+        state_topic: "/devices/wb-mdm3_110/controls/K3"
+        command_topic: "/devices/wb-mdm3_110/controls/K3/on"
+        brightness_state_topic: "/devices/wb-mdm3_110/controls/Channel 3"
+        brightness_command_topic: "/devices/wb-mdm3_110/controls/Channel 3/on"
+        device:
+          name: "Коридор — потолок"
+          identifiers: [["wirenboard", "wb-mdm3_110", "k3"]]
+          manufacturer: Wiren Board
+          model: WB-MDM3 110
+          suggested_area: Коридор
+
+      # ─── Ванна, постирочная (wb-mdm3_175, wb-mdm3_118) ───
+      - <<: *wb_mdm3_defaults
+        name: "Ванна — потолок"
+        object_id: vanna_potolok
+        unique_id: wb_mdm3_175_k1
+        state_topic: "/devices/wb-mdm3_175/controls/K1"
+        command_topic: "/devices/wb-mdm3_175/controls/K1/on"
+        brightness_state_topic: "/devices/wb-mdm3_175/controls/Channel 1"
+        brightness_command_topic: "/devices/wb-mdm3_175/controls/Channel 1/on"
+        device:
+          name: "Ванна — потолок"
+          identifiers: [["wirenboard", "wb-mdm3_175", "k1"]]
+          manufacturer: Wiren Board
+          model: WB-MDM3 175
+          suggested_area: Ванна
+
+      - <<: *wb_mdm3_defaults
+        name: "Постирочная — потолок"
+        object_id: postirochnaia_potolok
+        unique_id: wb_mdm3_118_k3
+        state_topic: "/devices/wb-mdm3_118/controls/K3"
+        command_topic: "/devices/wb-mdm3_118/controls/K3/on"
+        brightness_state_topic: "/devices/wb-mdm3_118/controls/Channel 3"
+        brightness_command_topic: "/devices/wb-mdm3_118/controls/Channel 3/on"
+        device:
+          name: "Постирочная — потолок"
+          identifiers: [["wirenboard", "wb-mdm3_118", "k3"]]
+          manufacturer: Wiren Board
+          model: WB-MDM3 118
+          suggested_area: Постирочная

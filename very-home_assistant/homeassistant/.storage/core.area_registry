@@ -42,6 +42,71 @@
         "temperature_entity_id": null,
         "created_at": "2025-09-19T14:38:16.005858+00:00",
         "modified_at": "2025-09-19T14:38:16.005863+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": null,
+        "humidity_entity_id": null,
+        "icon": "mdi:desk",
+        "id": "kabinet",
+        "labels": [],
+        "name": "Кабинет",
+        "picture": null,
+        "temperature_entity_id": null,
+        "created_at": "2026-06-02T12:00:00.000000+00:00",
+        "modified_at": "2026-06-02T12:00:00.000000+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": null,
+        "humidity_entity_id": null,
+        "icon": "mdi:teddy-bear",
+        "id": "detskaia",
+        "labels": [],
+        "name": "Детская",
+        "picture": null,
+        "temperature_entity_id": null,
+        "created_at": "2026-06-02T12:00:00.000000+00:00",
+        "modified_at": "2026-06-02T12:00:00.000000+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": null,
+        "humidity_entity_id": null,
+        "icon": "mdi:door-sliding",
+        "id": "koridor",
+        "labels": [],
+        "name": "Коридор",
+        "picture": null,
+        "temperature_entity_id": null,
+        "created_at": "2026-06-02T12:00:00.000000+00:00",
+        "modified_at": "2026-06-02T12:00:00.000000+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": null,
+        "humidity_entity_id": null,
+        "icon": "mdi:shower-head",
+        "id": "vanna",
+        "labels": [],
+        "name": "Ванна",
+        "picture": null,
+        "temperature_entity_id": null,
+        "created_at": "2026-06-02T12:00:00.000000+00:00",
+        "modified_at": "2026-06-02T12:00:00.000000+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": null,
+        "humidity_entity_id": null,
+        "icon": "mdi:washing-machine",
+        "id": "postirochnaia",
+        "labels": [],
+        "name": "Постирочная",
+        "picture": null,
+        "temperature_entity_id": null,
+        "created_at": "2026-06-02T12:00:00.000000+00:00",
+        "modified_at": "2026-06-02T12:00:00.000000+00:00"
       }
     ]
   }
