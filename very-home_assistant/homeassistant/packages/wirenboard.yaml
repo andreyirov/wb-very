@@ -8,7 +8,7 @@ mqtt:
     payload_on: '1'
     payload_off: '0'
     name: Кухня — фартук
-    object_id: kukhnia_fartuk
+    default_entity_id: light.kukhnia_fartuk
     unique_id: wb_led_16_ch4
     state_topic: "/devices/wb-led_16/controls/Channel 4"
     command_topic: "/devices/wb-led_16/controls/Channel 4/on"
@@ -28,7 +28,7 @@ mqtt:
     payload_on: '1'
     payload_off: '0'
     name: Кухня — шкаф (лево)
-    object_id: kukhnia_shkaf_levo
+    default_entity_id: light.kukhnia_shkaf_levo
     unique_id: wb_led_16_ch2
     state_topic: "/devices/wb-led_16/controls/Channel 2"
     command_topic: "/devices/wb-led_16/controls/Channel 2/on"
@@ -48,7 +48,7 @@ mqtt:
     payload_on: '1'
     payload_off: '0'
     name: Кухня — шкаф (право)
-    object_id: kukhnia_shkaf_pravo
+    default_entity_id: light.kukhnia_shkaf_pravo
     unique_id: wb_led_16_ch3
     state_topic: "/devices/wb-led_16/controls/Channel 3"
     command_topic: "/devices/wb-led_16/controls/Channel 3/on"
@@ -68,7 +68,7 @@ mqtt:
     payload_on: '1'
     payload_off: '0'
     name: Кухня — потолок
-    object_id: kukhnia_potolok
+    default_entity_id: light.kukhnia_potolok
     unique_id: wb_mdm3_175_k3
     state_topic: "/devices/wb-mdm3_175/controls/K3"
     command_topic: "/devices/wb-mdm3_175/controls/K3/on"
@@ -88,13 +88,12 @@ mqtt:
     payload_on: '1'
     payload_off: '0'
     color_temp_kelvin: true
-    color_temp_state_template: "{{ (2700 + (value | int(0)) * 38) | int }}"
-    color_temp_command_template: "{{ ((value | int - 2700) / 38) | round(0) | int
-      }}"
+    color_temp_value_template: "{{ (2700 + (value | int(0)) * 38) | int }}"
+    color_temp_command_template: "{{ ((value | int - 2700) / 38) | round(0) | int }}"
     supported_color_modes:
       - color_temp
     name: Гостиная — шторы (окно 2)
-    object_id: gostinaia_shtory_okno2
+    default_entity_id: light.gostinaia_shtory_okno2
     unique_id: wb_led_25_cct1
     state_topic: "/devices/wb-led_25/controls/CCT1"
     command_topic: "/devices/wb-led_25/controls/CCT1/on"
@@ -116,13 +115,12 @@ mqtt:
     payload_on: '1'
     payload_off: '0'
     color_temp_kelvin: true
-    color_temp_state_template: "{{ (2700 + (value | int(0)) * 38) | int }}"
-    color_temp_command_template: "{{ ((value | int - 2700) / 38) | round(0) | int
-      }}"
+    color_temp_value_template: "{{ (2700 + (value | int(0)) * 38) | int }}"
+    color_temp_command_template: "{{ ((value | int - 2700) / 38) | round(0) | int }}"
     supported_color_modes:
       - color_temp
     name: Гостиная — шторы (окно 3)
-    object_id: gostinaia_shtory_okno3
+    default_entity_id: light.gostinaia_shtory_okno3
     unique_id: wb_led_25_cct2
     state_topic: "/devices/wb-led_25/controls/CCT2"
     command_topic: "/devices/wb-led_25/controls/CCT2/on"
@@ -144,7 +142,7 @@ mqtt:
     payload_on: '1'
     payload_off: '0'
     name: Гостиная — потолок
-    object_id: gostinaia_potolok
+    default_entity_id: light.gostinaia_potolok
     unique_id: wb_mdm3_175_k2
     state_topic: "/devices/wb-mdm3_175/controls/K2"
     command_topic: "/devices/wb-mdm3_175/controls/K2/on"
@@ -164,7 +162,7 @@ mqtt:
     payload_on: '1'
     payload_off: '0'
     name: Гостиная — люстра над столом
-    object_id: gostinaia_liustra_stol
+    default_entity_id: light.gostinaia_liustra_stol
     unique_id: wb_mdm3_124_k1
     state_topic: "/devices/wb-mdm3_124/controls/K1"
     command_topic: "/devices/wb-mdm3_124/controls/K1/on"
@@ -184,13 +182,12 @@ mqtt:
     payload_on: '1'
     payload_off: '0'
     color_temp_kelvin: true
-    color_temp_state_template: "{{ (2700 + (value | int(0)) * 38) | int }}"
-    color_temp_command_template: "{{ ((value | int - 2700) / 38) | round(0) | int
-      }}"
+    color_temp_value_template: "{{ (2700 + (value | int(0)) * 38) | int }}"
+    color_temp_command_template: "{{ ((value | int - 2700) / 38) | round(0) | int }}"
     supported_color_modes:
       - color_temp
     name: Спальня — шторы
-    object_id: spalnia_shtory
+    default_entity_id: light.spalnia_shtory
     unique_id: wb_led_48_cct2
     state_topic: "/devices/wb-led_48/controls/CCT2"
     command_topic: "/devices/wb-led_48/controls/CCT2/on"
@@ -212,7 +209,7 @@ mqtt:
     payload_on: '1'
     payload_off: '0'
     name: Спальня — люстра
-    object_id: spalnia_liustra
+    default_entity_id: light.spalnia_liustra
     unique_id: wb_mdm3_109_k2
     state_topic: "/devices/wb-mdm3_109/controls/K2"
     command_topic: "/devices/wb-mdm3_109/controls/K2/on"
@@ -232,7 +229,7 @@ mqtt:
     payload_on: '1'
     payload_off: '0'
     name: Кабинет — потолок
-    object_id: kabinet_potolok
+    default_entity_id: light.kabinet_potolok
     unique_id: wb_mdm3_209_k3
     state_topic: "/devices/wb-mdm3_209/controls/K3"
     command_topic: "/devices/wb-mdm3_209/controls/K3/on"
@@ -252,7 +249,7 @@ mqtt:
     payload_on: '1'
     payload_off: '0'
     name: Кабинет — стол
-    object_id: kabinet_stol
+    default_entity_id: light.kabinet_stol
     unique_id: wb_led_47_ch3
     state_topic: "/devices/wb-led_47/controls/Channel 3"
     command_topic: "/devices/wb-led_47/controls/Channel 3/on"
@@ -272,7 +269,7 @@ mqtt:
     payload_on: '1'
     payload_off: '0'
     name: Прикроватный — у стены
-    object_id: prikrovatnyi_stena
+    default_entity_id: light.prikrovatnyi_stena
     unique_id: wb_mdm3_209_k1
     state_topic: "/devices/wb-mdm3_209/controls/K1"
     command_topic: "/devices/wb-mdm3_209/controls/K1/on"
@@ -292,7 +289,7 @@ mqtt:
     payload_on: '1'
     payload_off: '0'
     name: Прикроватный — у окна
-    object_id: prikrovatnyi_okno
+    default_entity_id: light.prikrovatnyi_okno
     unique_id: wb_mdm3_209_k2
     state_topic: "/devices/wb-mdm3_209/controls/K2"
     command_topic: "/devices/wb-mdm3_209/controls/K2/on"
@@ -312,13 +309,12 @@ mqtt:
     payload_on: '1'
     payload_off: '0'
     color_temp_kelvin: true
-    color_temp_state_template: "{{ (2700 + (value | int(0)) * 38) | int }}"
-    color_temp_command_template: "{{ ((value | int - 2700) / 38) | round(0) | int
-      }}"
+    color_temp_value_template: "{{ (2700 + (value | int(0)) * 38) | int }}"
+    color_temp_command_template: "{{ ((value | int - 2700) / 38) | round(0) | int }}"
     supported_color_modes:
       - color_temp
     name: Детская — шторы
-    object_id: detskaia_shtory
+    default_entity_id: light.detskaia_shtory
     unique_id: wb_led_48_cct1
     state_topic: "/devices/wb-led_48/controls/CCT1"
     command_topic: "/devices/wb-led_48/controls/CCT1/on"
@@ -340,7 +336,7 @@ mqtt:
     payload_on: '1'
     payload_off: '0'
     name: Детская — люстра
-    object_id: detskaia_liustra
+    default_entity_id: light.detskaia_liustra
     unique_id: wb_mdm3_201_k2
     state_topic: "/devices/wb-mdm3_201/controls/K2"
     command_topic: "/devices/wb-mdm3_201/controls/K2/on"
@@ -360,7 +356,7 @@ mqtt:
     payload_on: '1'
     payload_off: '0'
     name: Детская — рабочая зона
-    object_id: detskaia_rabochaia_zona
+    default_entity_id: light.detskaia_rabochaia_zona
     unique_id: wb_mdm3_109_k1
     state_topic: "/devices/wb-mdm3_109/controls/K1"
     command_topic: "/devices/wb-mdm3_109/controls/K1/on"
@@ -380,7 +376,7 @@ mqtt:
     payload_on: '1'
     payload_off: '0'
     name: Детская — подсветка стены
-    object_id: detskaia_stena
+    default_entity_id: light.detskaia_stena
     unique_id: wb_led_47_ch2
     state_topic: "/devices/wb-led_47/controls/Channel 2"
     command_topic: "/devices/wb-led_47/controls/Channel 2/on"
@@ -400,13 +396,12 @@ mqtt:
     payload_on: '1'
     payload_off: '0'
     color_temp_kelvin: true
-    color_temp_state_template: "{{ (2700 + (value | int(0)) * 38) | int }}"
-    color_temp_command_template: "{{ ((value | int - 2700) / 38) | round(0) | int
-      }}"
+    color_temp_value_template: "{{ (2700 + (value | int(0)) * 38) | int }}"
+    color_temp_command_template: "{{ ((value | int - 2700) / 38) | round(0) | int }}"
     supported_color_modes:
       - color_temp
     name: Коридор — подсветка
-    object_id: koridor_podsvetka
+    default_entity_id: light.koridor_podsvetka
     unique_id: wb_led_36_cct1
     state_topic: "/devices/wb-led_36/controls/CCT1"
     command_topic: "/devices/wb-led_36/controls/CCT1/on"
@@ -428,7 +423,7 @@ mqtt:
     payload_on: '1'
     payload_off: '0'
     name: Коридор — потолок
-    object_id: koridor_potolok
+    default_entity_id: light.koridor_potolok
     unique_id: wb_mdm3_110_k3
     state_topic: "/devices/wb-mdm3_110/controls/K3"
     command_topic: "/devices/wb-mdm3_110/controls/K3/on"
@@ -448,7 +443,7 @@ mqtt:
     payload_on: '1'
     payload_off: '0'
     name: Ванна — потолок
-    object_id: vanna_potolok
+    default_entity_id: light.vanna_potolok
     unique_id: wb_mdm3_175_k1
     state_topic: "/devices/wb-mdm3_175/controls/K1"
     command_topic: "/devices/wb-mdm3_175/controls/K1/on"
@@ -468,7 +463,7 @@ mqtt:
     payload_on: '1'
     payload_off: '0'
     name: Постирочная — потолок
-    object_id: postirochnaia_potolok
+    default_entity_id: light.postirochnaia_potolok
     unique_id: wb_mdm3_118_k3
     state_topic: "/devices/wb-mdm3_118/controls/K3"
     command_topic: "/devices/wb-mdm3_118/controls/K3/on"
