@@ -1,0 +1,290 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "esphome.01K5H7NRRXG9K6HTPG4J659Y09",
+  "data": {
+    "device_info": {
+      "uses_password": true,
+      "name": "livingroom_brizer",
+      "friendly_name": "livingroom_brizer",
+      "mac_address": "2C:3A:E8:11:27:1D",
+      "compilation_time": "Sep 19 2025, 00:36:08",
+      "model": "esp01_1m",
+      "manufacturer": "Espressif",
+      "has_deep_sleep": false,
+      "esphome_version": "2025.8.4",
+      "project_name": "",
+      "project_version": "",
+      "webserver_port": 0,
+      "legacy_voice_assistant_version": 0,
+      "voice_assistant_feature_flags": 0,
+      "legacy_bluetooth_proxy_version": 0,
+      "bluetooth_proxy_feature_flags": 0,
+      "suggested_area": "",
+      "bluetooth_mac_address": "",
+      "api_encryption_supported": false,
+      "devices": [],
+      "areas": [],
+      "area": {
+        "area_id": 0,
+        "name": ""
+      }
+    },
+    "services": [],
+    "api_version": {
+      "major": 1,
+      "minor": 12
+    },
+    "binary_sensor": [
+      {
+        "object_id": "livingroom_brizer_status",
+        "key": 2306942995,
+        "name": "livingroom_brizer Status",
+        "disabled_by_default": false,
+        "icon": "",
+        "entity_category": 2,
+        "device_id": 0,
+        "device_class": "connectivity",
+        "is_status_binary_sensor": true
+      }
+    ],
+    "sensor": [
+      {
+        "object_id": "livingroom_brizer_uptime",
+        "key": 3433803913,
+        "name": "livingroom_brizer Uptime",
+        "disabled_by_default": false,
+        "icon": "mdi:timer-outline",
+        "entity_category": 2,
+        "device_id": 0,
+        "device_class": "duration",
+        "unit_of_measurement": "s",
+        "accuracy_decimals": 0,
+        "force_update": false,
+        "state_class": 2,
+        "legacy_last_reset_type": 0
+      },
+      {
+        "object_id": "livingroom_brizer_wifi_signal",
+        "key": 2422703061,
+        "name": "livingroom_brizer WiFi Signal",
+        "disabled_by_default": false,
+        "icon": "",
+        "entity_category": 2,
+        "device_id": 0,
+        "device_class": "signal_strength",
+        "unit_of_measurement": "dBm",
+        "accuracy_decimals": 0,
+        "force_update": false,
+        "state_class": 1,
+        "legacy_last_reset_type": 0
+      },
+      {
+        "object_id": "wifi_signal_percent",
+        "key": 463138235,
+        "name": "WiFi Signal Percent",
+        "disabled_by_default": false,
+        "icon": "",
+        "entity_category": 2,
+        "device_id": 0,
+        "device_class": "signal_strength",
+        "unit_of_measurement": "Signal %",
+        "accuracy_decimals": 0,
+        "force_update": false,
+        "state_class": 1,
+        "legacy_last_reset_type": 0
+      },
+      {
+        "object_id": "tvoc",
+        "key": 2685214397,
+        "name": "TVOC",
+        "disabled_by_default": false,
+        "icon": "",
+        "entity_category": 0,
+        "device_id": 0,
+        "device_class": "volatile_organic_compounds",
+        "unit_of_measurement": "",
+        "accuracy_decimals": 0,
+        "force_update": false,
+        "state_class": 1,
+        "legacy_last_reset_type": 0
+      },
+      {
+        "object_id": "outside_temperature",
+        "key": 2259435129,
+        "name": "Outside Temperature",
+        "disabled_by_default": false,
+        "icon": "",
+        "entity_category": 0,
+        "device_id": 0,
+        "device_class": "",
+        "unit_of_measurement": "°C",
+        "accuracy_decimals": 0,
+        "force_update": false,
+        "state_class": 0,
+        "legacy_last_reset_type": 0
+      },
+      {
+        "object_id": "air_quality",
+        "key": 1910889469,
+        "name": "Air Quality",
+        "disabled_by_default": false,
+        "icon": "mdi:air-filter",
+        "entity_category": 0,
+        "device_id": 0,
+        "device_class": "",
+        "unit_of_measurement": "",
+        "accuracy_decimals": 0,
+        "force_update": false,
+        "state_class": 0,
+        "legacy_last_reset_type": 0
+      },
+      {
+        "object_id": "noname",
+        "key": 4265236293,
+        "name": "noname",
+        "disabled_by_default": false,
+        "icon": "",
+        "entity_category": 0,
+        "device_id": 0,
+        "device_class": "",
+        "unit_of_measurement": "",
+        "accuracy_decimals": 0,
+        "force_update": false,
+        "state_class": 0,
+        "legacy_last_reset_type": 0
+      }
+    ],
+    "text_sensor": [
+      {
+        "object_id": "tvoc_classification",
+        "key": 3366667472,
+        "name": "TVOC Classification",
+        "disabled_by_default": false,
+        "icon": "mdi:checkbox-marked-circle-outline",
+        "entity_category": 0,
+        "device_id": 0,
+        "device_class": ""
+      }
+    ],
+    "number": [
+      {
+        "object_id": "polojenie_zaslonki",
+        "key": 3765777804,
+        "name": "Polojenie Zaslonki",
+        "disabled_by_default": false,
+        "icon": "",
+        "entity_category": 0,
+        "device_id": 0,
+        "min_value": 1.0,
+        "max_value": 5.0,
+        "step": 1.0,
+        "unit_of_measurement": "",
+        "mode": 0,
+        "device_class": ""
+      },
+      {
+        "object_id": "speed",
+        "key": 640949982,
+        "name": "Speed",
+        "disabled_by_default": false,
+        "icon": "",
+        "entity_category": 0,
+        "device_id": 0,
+        "min_value": 1.0,
+        "max_value": 9.0,
+        "step": 1.0,
+        "unit_of_measurement": "",
+        "mode": 0,
+        "device_class": ""
+      }
+    ],
+    "select": [
+      {
+        "object_id": "mode",
+        "key": 3313201736,
+        "name": "Mode",
+        "disabled_by_default": false,
+        "icon": "",
+        "entity_category": 0,
+        "device_id": 0,
+        "options": [
+          "auto",
+          "sleep",
+          "manual"
+        ]
+      },
+      {
+        "object_id": "klapan",
+        "key": 3842931510,
+        "name": "Klapan",
+        "disabled_by_default": false,
+        "icon": "",
+        "entity_category": 0,
+        "device_id": 0,
+        "options": [
+          "Auto_1",
+          "Auto_2",
+          "Manual"
+        ]
+      }
+    ],
+    "switch": [
+      {
+        "object_id": "power",
+        "key": 2391494160,
+        "name": "Power",
+        "disabled_by_default": false,
+        "icon": "",
+        "entity_category": 0,
+        "device_id": 0,
+        "assumed_state": false,
+        "device_class": ""
+      },
+      {
+        "object_id": "light",
+        "key": 1935470627,
+        "name": "Light",
+        "disabled_by_default": false,
+        "icon": "mdi:television-ambient-light",
+        "entity_category": 0,
+        "device_id": 0,
+        "assumed_state": false,
+        "device_class": ""
+      },
+      {
+        "object_id": "ionizer",
+        "key": 2668185665,
+        "name": "Ionizer",
+        "disabled_by_default": false,
+        "icon": "mdi:chart-bubble",
+        "entity_category": 0,
+        "device_id": 0,
+        "assumed_state": false,
+        "device_class": ""
+      },
+      {
+        "object_id": "filter_reset",
+        "key": 2972874503,
+        "name": "Filter Reset",
+        "disabled_by_default": false,
+        "icon": "mdi:calendar-filter",
+        "entity_category": 0,
+        "device_id": 0,
+        "assumed_state": false,
+        "device_class": ""
+      },
+      {
+        "object_id": "13",
+        "key": 544649049,
+        "name": "13",
+        "disabled_by_default": false,
+        "icon": "",
+        "entity_category": 0,
+        "device_id": 0,
+        "assumed_state": false,
+        "device_class": ""
+      }
+    ]
+  }
+}

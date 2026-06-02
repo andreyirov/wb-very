@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "minor_version": 1,
+  "key": "person",
+  "data": {
+    "items": [
+      {
+        "id": "irov",
+        "name": "irov",
+        "user_id": "962fd1bc3f8c4712b96a9ac4b9926ffb",
+        "device_trackers": []
+      }
+    ]
+  }
+}

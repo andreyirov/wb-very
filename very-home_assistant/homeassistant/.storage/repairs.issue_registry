@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "minor_version": 2,
+  "key": "repairs.issue_registry",
+  "data": {
+    "issues": [
+      {
+        "created": "2025-09-19T14:57:25.365820+00:00",
+        "dismissed_version": null,
+        "domain": "esphome",
+        "is_persistent": false,
+        "issue_id": "api_password_deprecated-2C:3A:E8:11:27:1D"
+      }
+    ]
+  }
+}
