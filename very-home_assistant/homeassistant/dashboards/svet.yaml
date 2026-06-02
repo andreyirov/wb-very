@@ -25,10 +25,13 @@ views:
                   action: call-service
                   service: script.svet_vse_vyklyuchit
               - type: markdown
-                content: >
-                  {% set lights = states.light | rejectattr(entity_id,search,sun) | list %}
-                  {% set on = lights | selectattr(state,eq,on) | list | count %}
-                  **Сейчас горит:** {{ on }} / {{ lights | count }}
+                content: |
+                  {% set ns = namespace(on=0, total=0) %}
+                  {% for s in states.light if not s.entity_id.startswith('sun.') %}
+                    {% set ns.total = ns.total + 1 %}
+                    {% if s.state == 'on' %}{% set ns.on = ns.on + 1 %}{% endif %}
+                  {% endfor %}
+                  **Сейчас горит:** {{ ns.on }} / {{ ns.total }}
       - type: grid
         columns: 1
         cards:
