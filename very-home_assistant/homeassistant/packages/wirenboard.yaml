@@ -17,9 +17,7 @@ mqtt:
     device:
       name: Кухня — фартук
       identifiers:
-      - - wirenboard
-        - wb-led_16
-        - ch4
+      - "wirenboard_wb-led_16_ch4"
       manufacturer: Wiren Board
       model: WB-LED 16
       suggested_area: Кухня
@@ -37,9 +35,7 @@ mqtt:
     device:
       name: Кухня — шкаф (лево)
       identifiers:
-      - - wirenboard
-        - wb-led_16
-        - ch2
+      - "wirenboard_wb-led_16_ch2"
       manufacturer: Wiren Board
       model: WB-LED 16
       suggested_area: Кухня
@@ -57,9 +53,7 @@ mqtt:
     device:
       name: Кухня — шкаф (право)
       identifiers:
-      - - wirenboard
-        - wb-led_16
-        - ch3
+      - "wirenboard_wb-led_16_ch3"
       manufacturer: Wiren Board
       model: WB-LED 16
       suggested_area: Кухня
@@ -77,9 +71,7 @@ mqtt:
     device:
       name: Кухня — потолок
       identifiers:
-      - - wirenboard
-        - wb-mdm3_175
-        - k3
+      - "wirenboard_wb-mdm3_175_k3"
       manufacturer: Wiren Board
       model: WB-MDM3 175
       suggested_area: Кухня
@@ -90,8 +82,6 @@ mqtt:
     color_temp_kelvin: true
     color_temp_value_template: "{{ (2700 + (value | int(0)) * 38) | int }}"
     color_temp_command_template: "{{ ((value | int - 2700) / 38) | round(0) | int }}"
-    supported_color_modes:
-      - color_temp
     name: Гостиная — шторы (окно 2)
     default_entity_id: light.gostinaia_shtory_okno2
     unique_id: wb_led_25_cct1
@@ -104,9 +94,7 @@ mqtt:
     device:
       name: Гостиная — шторы (окно 2)
       identifiers:
-      - - wirenboard
-        - wb-led_25
-        - cct1
+      - "wirenboard_wb-led_25_cct1"
       manufacturer: Wiren Board
       model: WB-LED 25
       suggested_area: Гостиная
@@ -117,8 +105,6 @@ mqtt:
     color_temp_kelvin: true
     color_temp_value_template: "{{ (2700 + (value | int(0)) * 38) | int }}"
     color_temp_command_template: "{{ ((value | int - 2700) / 38) | round(0) | int }}"
-    supported_color_modes:
-      - color_temp
     name: Гостиная — шторы (окно 3)
     default_entity_id: light.gostinaia_shtory_okno3
     unique_id: wb_led_25_cct2
@@ -131,9 +117,7 @@ mqtt:
     device:
       name: Гостиная — шторы (окно 3)
       identifiers:
-      - - wirenboard
-        - wb-led_25
-        - cct2
+      - "wirenboard_wb-led_25_cct2"
       manufacturer: Wiren Board
       model: WB-LED 25
       suggested_area: Гостиная
@@ -151,9 +135,7 @@ mqtt:
     device:
       name: Гостиная — потолок
       identifiers:
-      - - wirenboard
-        - wb-mdm3_175
-        - k2
+      - "wirenboard_wb-mdm3_175_k2"
       manufacturer: Wiren Board
       model: WB-MDM3 175
       suggested_area: Гостиная
@@ -171,9 +153,7 @@ mqtt:
     device:
       name: Гостиная — люстра над столом
       identifiers:
-      - - wirenboard
-        - wb-mdm3_124
-        - k1
+      - "wirenboard_wb-mdm3_124_k1"
       manufacturer: Wiren Board
       model: WB-MDM3 124
       suggested_area: Гостиная
@@ -184,8 +164,6 @@ mqtt:
     color_temp_kelvin: true
     color_temp_value_template: "{{ (2700 + (value | int(0)) * 38) | int }}"
     color_temp_command_template: "{{ ((value | int - 2700) / 38) | round(0) | int }}"
-    supported_color_modes:
-      - color_temp
     name: Спальня — шторы
     default_entity_id: light.spalnia_shtory
     unique_id: wb_led_48_cct2
@@ -198,9 +176,7 @@ mqtt:
     device:
       name: Спальня — шторы
       identifiers:
-      - - wirenboard
-        - wb-led_48
-        - cct2
+      - "wirenboard_wb-led_48_cct2"
       manufacturer: Wiren Board
       model: WB-LED 48
       suggested_area: Спальня
@@ -218,9 +194,7 @@ mqtt:
     device:
       name: Спальня — люстра
       identifiers:
-      - - wirenboard
-        - wb-mdm3_109
-        - k2
+      - "wirenboard_wb-mdm3_109_k2"
       manufacturer: Wiren Board
       model: WB-MDM3 109
       suggested_area: Спальня
@@ -238,9 +212,7 @@ mqtt:
     device:
       name: Кабинет — потолок
       identifiers:
-      - - wirenboard
-        - wb-mdm3_209
-        - k3
+      - "wirenboard_wb-mdm3_209_k3"
       manufacturer: Wiren Board
       model: WB-MDM3 209
       suggested_area: Кабинет
@@ -258,9 +230,7 @@ mqtt:
     device:
       name: Кабинет — стол
       identifiers:
-      - - wirenboard
-        - wb-led_47
-        - ch3
+      - "wirenboard_wb-led_47_ch3"
       manufacturer: Wiren Board
       model: WB-LED 47
       suggested_area: Кабинет
@@ -278,9 +248,7 @@ mqtt:
     device:
       name: Прикроватный — у стены
       identifiers:
-      - - wirenboard
-        - wb-mdm3_209
-        - k1
+      - "wirenboard_wb-mdm3_209_k1"
       manufacturer: Wiren Board
       model: WB-MDM3 209
       suggested_area: Спальня
@@ -298,9 +266,7 @@ mqtt:
     device:
       name: Прикроватный — у окна
       identifiers:
-      - - wirenboard
-        - wb-mdm3_209
-        - k2
+      - "wirenboard_wb-mdm3_209_k2"
       manufacturer: Wiren Board
       model: WB-MDM3 209
       suggested_area: Спальня
@@ -311,8 +277,6 @@ mqtt:
     color_temp_kelvin: true
     color_temp_value_template: "{{ (2700 + (value | int(0)) * 38) | int }}"
     color_temp_command_template: "{{ ((value | int - 2700) / 38) | round(0) | int }}"
-    supported_color_modes:
-      - color_temp
     name: Детская — шторы
     default_entity_id: light.detskaia_shtory
     unique_id: wb_led_48_cct1
@@ -325,9 +289,7 @@ mqtt:
     device:
       name: Детская — шторы
       identifiers:
-      - - wirenboard
-        - wb-led_48
-        - cct1
+      - "wirenboard_wb-led_48_cct1"
       manufacturer: Wiren Board
       model: WB-LED 48
       suggested_area: Детская
@@ -345,9 +307,7 @@ mqtt:
     device:
       name: Детская — люстра
       identifiers:
-      - - wirenboard
-        - wb-mdm3_201
-        - k2
+      - "wirenboard_wb-mdm3_201_k2"
       manufacturer: Wiren Board
       model: WB-MDM3 201
       suggested_area: Детская
@@ -365,9 +325,7 @@ mqtt:
     device:
       name: Детская — рабочая зона
       identifiers:
-      - - wirenboard
-        - wb-mdm3_109
-        - k1
+      - "wirenboard_wb-mdm3_109_k1"
       manufacturer: Wiren Board
       model: WB-MDM3 109
       suggested_area: Детская
@@ -385,9 +343,7 @@ mqtt:
     device:
       name: Детская — подсветка стены
       identifiers:
-      - - wirenboard
-        - wb-led_47
-        - ch2
+      - "wirenboard_wb-led_47_ch2"
       manufacturer: Wiren Board
       model: WB-LED 47
       suggested_area: Детская
@@ -398,8 +354,6 @@ mqtt:
     color_temp_kelvin: true
     color_temp_value_template: "{{ (2700 + (value | int(0)) * 38) | int }}"
     color_temp_command_template: "{{ ((value | int - 2700) / 38) | round(0) | int }}"
-    supported_color_modes:
-      - color_temp
     name: Коридор — подсветка
     default_entity_id: light.koridor_podsvetka
     unique_id: wb_led_36_cct1
@@ -412,9 +366,7 @@ mqtt:
     device:
       name: Коридор — подсветка
       identifiers:
-      - - wirenboard
-        - wb-led_36
-        - cct1
+      - "wirenboard_wb-led_36_cct1"
       manufacturer: Wiren Board
       model: WB-LED 36
       suggested_area: Коридор
@@ -432,9 +384,7 @@ mqtt:
     device:
       name: Коридор — потолок
       identifiers:
-      - - wirenboard
-        - wb-mdm3_110
-        - k3
+      - "wirenboard_wb-mdm3_110_k3"
       manufacturer: Wiren Board
       model: WB-MDM3 110
       suggested_area: Коридор
@@ -452,9 +402,7 @@ mqtt:
     device:
       name: Ванна — потолок
       identifiers:
-      - - wirenboard
-        - wb-mdm3_175
-        - k1
+      - "wirenboard_wb-mdm3_175_k1"
       manufacturer: Wiren Board
       model: WB-MDM3 175
       suggested_area: Ванна
@@ -472,9 +420,7 @@ mqtt:
     device:
       name: Постирочная — потолок
       identifiers:
-      - - wirenboard
-        - wb-mdm3_118
-        - k3
+      - "wirenboard_wb-mdm3_118_k3"
       manufacturer: Wiren Board
       model: WB-MDM3 118
       suggested_area: Постирочная
