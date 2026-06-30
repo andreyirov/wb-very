@@ -34,7 +34,7 @@ mqtt:
     payload_off: '0'
     name: Кухня — зона готовки
     default_entity_id: light.kukhnia_zona_gotovki
-    unique_id: wb_led_16_ch3
+    unique_id: wb_led_16_w3
     state_topic: "/devices/wb-led_16/controls/Channel 3"
     command_topic: "/devices/wb-led_16/controls/Channel 3/on"
     brightness_state_topic: "/devices/wb-led_16/controls/Channel 3 Brightness"
@@ -42,7 +42,7 @@ mqtt:
     device:
       name: Кухня — зона готовки
       identifiers:
-      - "wirenboard_wb-led_16_ch3"
+      - "wirenboard_wb-led_16_w3"
       manufacturer: Wiren Board
       model: WB-LED 16
       suggested_area: Кухня-гостиная
@@ -52,7 +52,7 @@ mqtt:
     payload_off: '0'
     name: Ванная — подсветка
     default_entity_id: light.vannaya_podsvetka
-    unique_id: wb_led_16_ch4
+    unique_id: wb_led_16_w4
     state_topic: "/devices/wb-led_16/controls/Channel 4"
     command_topic: "/devices/wb-led_16/controls/Channel 4/on"
     brightness_state_topic: "/devices/wb-led_16/controls/Channel 4 Brightness"
@@ -60,7 +60,7 @@ mqtt:
     device:
       name: Ванная — подсветка
       identifiers:
-      - "wirenboard_wb-led_16_ch4"
+      - "wirenboard_wb-led_16_w4"
       manufacturer: Wiren Board
       model: WB-LED 16
       suggested_area: Ванна
