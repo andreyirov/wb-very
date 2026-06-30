@@ -7,61 +7,68 @@ mqtt:
     brightness_scale: 100
     payload_on: '1'
     payload_off: '0'
-    name: Кухня — фартук
-    default_entity_id: light.kukhnia_fartuk
-    unique_id: wb_led_16_ch4
-    state_topic: "/devices/wb-led_16/controls/Channel 4"
-    command_topic: "/devices/wb-led_16/controls/Channel 4/on"
-    brightness_state_topic: "/devices/wb-led_16/controls/Channel 4 Brightness"
-    brightness_command_topic: "/devices/wb-led_16/controls/Channel 4 Brightness/on"
+    color_temp_kelvin: true
+    min_color_temp_kelvin: 2700
+    max_color_temp_kelvin: 4000
+    color_temp_value_template: "{{ (2700 + (value | int(0)) * 13) | int }}"
+    color_temp_command_template: "{{ ((value | int - 2700) / 13) | round(0) | int }}"
+    name: Кухня — подсветка витрины
+    default_entity_id: light.kukhnia_vitrina
+    unique_id: wb_led_16_cct1
+    state_topic: "/devices/wb-led_16/controls/CCT1"
+    command_topic: "/devices/wb-led_16/controls/CCT1/on"
+    brightness_state_topic: "/devices/wb-led_16/controls/CCT1 Brightness"
+    brightness_command_topic: "/devices/wb-led_16/controls/CCT1 Brightness/on"
+    color_temp_state_topic: "/devices/wb-led_16/controls/CCT1 Temperature"
+    color_temp_command_topic: "/devices/wb-led_16/controls/CCT1 Temperature/on"
     device:
-      name: Кухня — фартук
+      name: Кухня — подсветка витрины
       identifiers:
-      - "wirenboard_wb-led_16_ch4"
+      - "wirenboard_wb-led_16_cct1"
       manufacturer: Wiren Board
       model: WB-LED 16
-      suggested_area: Кухня
+      suggested_area: Кухня-гостиная
   -
     brightness_scale: 100
     payload_on: '1'
     payload_off: '0'
-    name: Кухня — шкаф (лево)
-    default_entity_id: light.kukhnia_shkaf_levo
-    unique_id: wb_led_16_ch2
-    state_topic: "/devices/wb-led_16/controls/Channel 2"
-    command_topic: "/devices/wb-led_16/controls/Channel 2/on"
-    brightness_state_topic: "/devices/wb-led_16/controls/Channel 2 Brightness"
-    brightness_command_topic: "/devices/wb-led_16/controls/Channel 2 Brightness/on"
-    device:
-      name: Кухня — шкаф (лево)
-      identifiers:
-      - "wirenboard_wb-led_16_ch2"
-      manufacturer: Wiren Board
-      model: WB-LED 16
-      suggested_area: Кухня
-  -
-    brightness_scale: 100
-    payload_on: '1'
-    payload_off: '0'
-    name: Кухня — шкаф (право)
-    default_entity_id: light.kukhnia_shkaf_pravo
+    name: Кухня — зона готовки
+    default_entity_id: light.kukhnia_zona_gotovki
     unique_id: wb_led_16_ch3
     state_topic: "/devices/wb-led_16/controls/Channel 3"
     command_topic: "/devices/wb-led_16/controls/Channel 3/on"
     brightness_state_topic: "/devices/wb-led_16/controls/Channel 3 Brightness"
     brightness_command_topic: "/devices/wb-led_16/controls/Channel 3 Brightness/on"
     device:
-      name: Кухня — шкаф (право)
+      name: Кухня — зона готовки
       identifiers:
       - "wirenboard_wb-led_16_ch3"
       manufacturer: Wiren Board
       model: WB-LED 16
-      suggested_area: Кухня
+      suggested_area: Кухня-гостиная
   -
     brightness_scale: 100
     payload_on: '1'
     payload_off: '0'
-    name: Кухня — потолок
+    name: Ванная — подсветка
+    default_entity_id: light.vannaya_podsvetka
+    unique_id: wb_led_16_ch4
+    state_topic: "/devices/wb-led_16/controls/Channel 4"
+    command_topic: "/devices/wb-led_16/controls/Channel 4/on"
+    brightness_state_topic: "/devices/wb-led_16/controls/Channel 4 Brightness"
+    brightness_command_topic: "/devices/wb-led_16/controls/Channel 4 Brightness/on"
+    device:
+      name: Ванная — подсветка
+      identifiers:
+      - "wirenboard_wb-led_16_ch4"
+      manufacturer: Wiren Board
+      model: WB-LED 16
+      suggested_area: Ванна
+  -
+    brightness_scale: 100
+    payload_on: '1'
+    payload_off: '0'
+    name: Гостиная — потолок
     default_entity_id: light.kukhnia_potolok
     unique_id: wb_mdm3_175_k3
     state_topic: "/devices/wb-mdm3_175/controls/K3"
@@ -69,19 +76,21 @@ mqtt:
     brightness_state_topic: "/devices/wb-mdm3_175/controls/Channel 3"
     brightness_command_topic: "/devices/wb-mdm3_175/controls/Channel 3/on"
     device:
-      name: Кухня — потолок
+      name: Гостиная — потолок
       identifiers:
       - "wirenboard_wb-mdm3_175_k3"
       manufacturer: Wiren Board
       model: WB-MDM3 175
-      suggested_area: Кухня
+      suggested_area: Кухня-гостиная
   -
     brightness_scale: 100
     payload_on: '1'
     payload_off: '0'
     color_temp_kelvin: true
-    color_temp_value_template: "{{ (2700 + (value | int(0)) * 38) | int }}"
-    color_temp_command_template: "{{ ((value | int - 2700) / 38) | round(0) | int }}"
+    min_color_temp_kelvin: 2700
+    max_color_temp_kelvin: 4000
+    color_temp_value_template: "{{ (2700 + (value | int(0)) * 13) | int }}"
+    color_temp_command_template: "{{ ((value | int - 2700) / 13) | round(0) | int }}"
     name: Гостиная — шторы (окно 2)
     default_entity_id: light.gostinaia_shtory_okno2
     unique_id: wb_led_25_cct1
@@ -97,14 +106,16 @@ mqtt:
       - "wirenboard_wb-led_25_cct1"
       manufacturer: Wiren Board
       model: WB-LED 25
-      suggested_area: Гостиная
+      suggested_area: Кухня-гостиная
   -
     brightness_scale: 100
     payload_on: '1'
     payload_off: '0'
     color_temp_kelvin: true
-    color_temp_value_template: "{{ (2700 + (value | int(0)) * 38) | int }}"
-    color_temp_command_template: "{{ ((value | int - 2700) / 38) | round(0) | int }}"
+    min_color_temp_kelvin: 2700
+    max_color_temp_kelvin: 4000
+    color_temp_value_template: "{{ (2700 + (value | int(0)) * 13) | int }}"
+    color_temp_command_template: "{{ ((value | int - 2700) / 13) | round(0) | int }}"
     name: Гостиная — шторы (окно 3)
     default_entity_id: light.gostinaia_shtory_okno3
     unique_id: wb_led_25_cct2
@@ -120,12 +131,12 @@ mqtt:
       - "wirenboard_wb-led_25_cct2"
       manufacturer: Wiren Board
       model: WB-LED 25
-      suggested_area: Гостиная
+      suggested_area: Кухня-гостиная
   -
     brightness_scale: 100
     payload_on: '1'
     payload_off: '0'
-    name: Гостиная — потолок
+    name: Кухня — потолок
     default_entity_id: light.gostinaia_potolok
     unique_id: wb_mdm3_175_k2
     state_topic: "/devices/wb-mdm3_175/controls/K2"
@@ -133,12 +144,12 @@ mqtt:
     brightness_state_topic: "/devices/wb-mdm3_175/controls/Channel 2"
     brightness_command_topic: "/devices/wb-mdm3_175/controls/Channel 2/on"
     device:
-      name: Гостиная — потолок
+      name: Кухня — потолок
       identifiers:
       - "wirenboard_wb-mdm3_175_k2"
       manufacturer: Wiren Board
       model: WB-MDM3 175
-      suggested_area: Гостиная
+      suggested_area: Кухня-гостиная
   -
     brightness_scale: 100
     payload_on: '1'
@@ -156,14 +167,16 @@ mqtt:
       - "wirenboard_wb-mdm3_124_k1"
       manufacturer: Wiren Board
       model: WB-MDM3 124
-      suggested_area: Гостиная
+      suggested_area: Кухня-гостиная
   -
     brightness_scale: 100
     payload_on: '1'
     payload_off: '0'
     color_temp_kelvin: true
-    color_temp_value_template: "{{ (2700 + (value | int(0)) * 38) | int }}"
-    color_temp_command_template: "{{ ((value | int - 2700) / 38) | round(0) | int }}"
+    min_color_temp_kelvin: 2700
+    max_color_temp_kelvin: 4000
+    color_temp_value_template: "{{ (2700 + (value | int(0)) * 13) | int }}"
+    color_temp_command_template: "{{ ((value | int - 2700) / 13) | round(0) | int }}"
     name: Спальня — шторы
     default_entity_id: light.spalnia_shtory
     unique_id: wb_led_48_cct2
@@ -275,8 +288,10 @@ mqtt:
     payload_on: '1'
     payload_off: '0'
     color_temp_kelvin: true
-    color_temp_value_template: "{{ (2700 + (value | int(0)) * 38) | int }}"
-    color_temp_command_template: "{{ ((value | int - 2700) / 38) | round(0) | int }}"
+    min_color_temp_kelvin: 2700
+    max_color_temp_kelvin: 4000
+    color_temp_value_template: "{{ (2700 + (value | int(0)) * 13) | int }}"
+    color_temp_command_template: "{{ ((value | int - 2700) / 13) | round(0) | int }}"
     name: Детская — шторы
     default_entity_id: light.detskaia_shtory
     unique_id: wb_led_48_cct1
@@ -352,8 +367,10 @@ mqtt:
     payload_on: '1'
     payload_off: '0'
     color_temp_kelvin: true
-    color_temp_value_template: "{{ (2700 + (value | int(0)) * 38) | int }}"
-    color_temp_command_template: "{{ ((value | int - 2700) / 38) | round(0) | int }}"
+    min_color_temp_kelvin: 2700
+    max_color_temp_kelvin: 4000
+    color_temp_value_template: "{{ (2700 + (value | int(0)) * 13) | int }}"
+    color_temp_command_template: "{{ ((value | int - 2700) / 13) | round(0) | int }}"
     name: Коридор — подсветка
     default_entity_id: light.koridor_podsvetka
     unique_id: wb_led_36_cct1

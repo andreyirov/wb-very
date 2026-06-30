@@ -2,25 +2,23 @@
 
 MQTT-брокер в HA: **192.168.180.10** (wb8). Панель: Lovelace **Свет**, сущности `light.*` ниже.
 
-## Кухня
+CCT-ленты: диапазон цветовой температуры в HA — **2700–4000 K** (регистр WB 0–100 → K).
+
+## Кухня-гостиная
 
 | Зона | WB | HA entity |
 |------|-----|-----------|
-| Подсветка фартука | wb-led_16 ch 4 | `light.kukhnia_fartuk` |
-| Подсветка шкаф (лево) | wb-led_16 ch 2 | `light.kukhnia_shkaf_levo` |
-| Подсветка шкаф (право) | wb-led_16 ch 3 | `light.kukhnia_shkaf_pravo` |
-| Потолок | wb-mdm3_175 K3 | `light.kukhnia_potolok` |
-
-Разобраться: если нужен CCT — поменять ch 1 (ванна?) и ch 3.
-
-## Гостиная
-
-| Зона | WB | HA entity |
-|------|-----|-----------|
+| Подсветка витрины (CCT) | wb-led_16 CCT1 (ch 1+2) | `light.kukhnia_vitrina` |
+| Зона готовки (W) | wb-led_16 ch 3 | `light.kukhnia_zona_gotovki` |
+| Потолочные светильники (кухня) | wb-mdm3_175 K2 | `light.gostinaia_potolok` |
+| Потолочные светильники (гостиная) | wb-mdm3_175 K3 | `light.kukhnia_potolok` |
+| Люстра над столом | wb-mdm3_124 K1 | `light.gostinaia_liustra_stol` |
 | Окно 2 — шторы | wb-led_25 CCT1 | `light.gostinaia_shtory_okno2` |
 | Окно 3 — шторы | wb-led_25 CCT2 | `light.gostinaia_shtory_okno3` |
-| Потолочные светильники | wb-mdm3_175 K2 | `light.gostinaia_potolok` |
-| Люстра над столом | wb-mdm3_124 K1 | `light.gostinaia_liustra_stol` |
+
+wb-led_16 `dimmer_mode = 2` (CCT + W + W): ch 1+2 → CCT1, ch 3 → W, ch 4 → W.
+Потолки кухни/гостиной: поменяны местами только подписи, привязка entity_id к каналам сохранена
+(`light.kukhnia_potolok` = K3 = гостиная, `light.gostinaia_potolok` = K2 = кухня).
 
 ## Спальня
 
@@ -54,4 +52,5 @@ MQTT-брокер в HA: **192.168.180.10** (wb8). Панель: Lovelace **Св
 | Подсветка | wb-led_36 CCT1 | `light.koridor_podsvetka` |
 | Потолочные | wb-mdm3_110 K3 | `light.koridor_potolok` |
 | Ванна — потолок | wb-mdm3_175 K1 | `light.vanna_potolok` |
+| Ванна — подсветка | wb-led_16 ch 4 | `light.vannaya_podsvetka` |
 | Постирочная — потолок | wb-mdm3_118 K3 | `light.postirochnaia_potolok` |

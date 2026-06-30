@@ -36,54 +36,48 @@ views:
         columns: 1
         cards:
           - type: heading
-            heading: Кухня
-            icon: mdi:stove
+            heading: Кухня-гостиная
+            icon: mdi:sofa-outline
           - type: grid
             columns: 2
             square: false
             cards:
               - type: tile
-                entity: light.kukhnia_fartuk
-                name: Фартук
+                entity: light.kukhnia_vitrina
+                name: Витрина
                 icon: mdi:led-strip-variant
                 vertical: true
                 features:
                   - type: light-brightness
                   - type: light-color-temp
               - type: tile
-                entity: light.kukhnia_shkaf_levo
-                name: Шкаф L
-                icon: mdi:cabinet
+                entity: light.kukhnia_zona_gotovki
+                name: Зона готовки
+                icon: mdi:stove
                 vertical: true
                 features:
                   - type: light-brightness
-                  - type: light-color-temp
               - type: tile
-                entity: light.kukhnia_shkaf_pravo
-                name: Шкаф R
-                icon: mdi:cabinet
-                vertical: true
-                features:
-                  - type: light-brightness
-                  - type: light-color-temp
-              - type: tile
-                entity: light.kukhnia_potolok
-                name: Потолок
+                entity: light.gostinaia_potolok
+                name: Потолок кухня
                 icon: mdi:ceiling-light
                 vertical: true
                 features:
                   - type: light-brightness
-                  - type: light-color-temp
-      - type: grid
-        columns: 1
-        cards:
-          - type: heading
-            heading: Гостиная
-            icon: mdi:sofa-outline
-          - type: grid
-            columns: 2
-            square: false
-            cards:
+              - type: tile
+                entity: light.kukhnia_potolok
+                name: Потолок гостиная
+                icon: mdi:ceiling-light-multiple
+                vertical: true
+                features:
+                  - type: light-brightness
+              - type: tile
+                entity: light.gostinaia_liustra_stol
+                name: Люстра стол
+                icon: mdi:chandelier
+                vertical: true
+                features:
+                  - type: light-brightness
               - type: tile
                 entity: light.gostinaia_shtory_okno2
                 name: Шторы ок.2
@@ -96,22 +90,6 @@ views:
                 entity: light.gostinaia_shtory_okno3
                 name: Шторы ок.3
                 icon: mdi:curtains
-                vertical: true
-                features:
-                  - type: light-brightness
-                  - type: light-color-temp
-              - type: tile
-                entity: light.gostinaia_potolok
-                name: Потолок
-                icon: mdi:ceiling-light-multiple
-                vertical: true
-                features:
-                  - type: light-brightness
-                  - type: light-color-temp
-              - type: tile
-                entity: light.gostinaia_liustra_stol
-                name: Люстра стол
-                icon: mdi:chandelier
                 vertical: true
                 features:
                   - type: light-brightness
@@ -261,6 +239,13 @@ views:
                   - type: light-brightness
                   - type: light-color-temp
               - type: tile
+                entity: light.vannaya_podsvetka
+                name: Ванна подсветка
+                icon: mdi:led-strip-variant
+                vertical: true
+                features:
+                  - type: light-brightness
+              - type: tile
                 entity: light.postirochnaia_potolok
                 name: Постирочная
                 icon: mdi:washing-machine
@@ -276,20 +261,15 @@ views:
     type: masonry
     cards:
       - type: glance
-        title: Кухня
+        title: Кухня-гостиная
         entities:
-          - light.kukhnia_fartuk
-          - light.kukhnia_shkaf_levo
-          - light.kukhnia_shkaf_pravo
+          - light.kukhnia_vitrina
+          - light.kukhnia_zona_gotovki
           - light.kukhnia_potolok
-        state_color: true
-      - type: glance
-        title: Гостиная
-        entities:
-          - light.gostinaia_shtory_okno2
-          - light.gostinaia_shtory_okno3
           - light.gostinaia_potolok
           - light.gostinaia_liustra_stol
+          - light.gostinaia_shtory_okno2
+          - light.gostinaia_shtory_okno3
         state_color: true
       - type: glance
         title: Спальня
@@ -319,6 +299,7 @@ views:
           - light.koridor_podsvetka
           - light.koridor_potolok
           - light.vanna_potolok
+          - light.vannaya_podsvetka
           - light.postirochnaia_potolok
         state_color: true
   - title: Детально
@@ -331,14 +312,13 @@ views:
         title: Все линии света
         show_header_toggle: true
         entities:
-          - light.kukhnia_fartuk
-          - light.kukhnia_shkaf_levo
-          - light.kukhnia_shkaf_pravo
+          - light.kukhnia_vitrina
+          - light.kukhnia_zona_gotovki
           - light.kukhnia_potolok
-          - light.gostinaia_shtory_okno2
-          - light.gostinaia_shtory_okno3
           - light.gostinaia_potolok
           - light.gostinaia_liustra_stol
+          - light.gostinaia_shtory_okno2
+          - light.gostinaia_shtory_okno3
           - light.spalnia_shtory
           - light.spalnia_liustra
           - light.prikrovatnyi_stena
@@ -352,4 +332,5 @@ views:
           - light.koridor_podsvetka
           - light.koridor_potolok
           - light.vanna_potolok
+          - light.vannaya_podsvetka
           - light.postirochnaia_potolok
