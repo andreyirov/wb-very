@@ -1,5 +1,5 @@
 substitutions:
-  device_name: "Childrenroom_brizer"
+  device_name: "childrenroom_brizer"
   friendly_name: "Children's Room Brizer"
 esphome:
   name: "${device_name}"

@@ -1,5 +1,5 @@
 substitutions:
-  device_name: "Bedroom_brizer"
+  device_name: "bedroom_brizer"
   friendly_name: "Bedroom Brizer"
 esphome:
   name: "${device_name}"

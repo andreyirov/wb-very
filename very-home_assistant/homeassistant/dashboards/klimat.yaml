@@ -1,0 +1,123 @@
+# Панель климата — бризеры (ESPHome / Tuya)
+# Бризеры добавляются в HA через UI (Настройки → Устройства → Добавить ESPHome).
+# livingroom_brizer уже добавлен; childrenroom_brizer и bedroom_brizer — ожидаемые entity_id.
+title: Климат
+views:
+  - title: Климат
+    path: klimat
+    icon: mdi:air-filter
+    theme: wb_svet
+    type: sections
+    max_columns: 3
+    sections:
+      - type: grid
+        columns: 1
+        cards:
+          - type: heading
+            heading: Кухня-гостиная — бризер
+            icon: mdi:air-filter
+          - type: entities
+            title: Управление
+            entities:
+              - entity: switch.livingroom_brizer_power
+                name: Питание
+              - entity: select.livingroom_brizer_mode
+                name: Режим
+              - entity: number.livingroom_brizer_speed
+                name: Скорость
+              - entity: select.livingroom_brizer_klapan
+                name: Клапан
+              - entity: number.livingroom_brizer_polojenie_zaslonki
+                name: Положение заслонки
+              - entity: switch.livingroom_brizer_light
+                name: Подсветка экрана
+              - entity: switch.livingroom_brizer_ionizer
+                name: Ионизатор
+              - entity: switch.livingroom_brizer_filter_reset
+                name: Сброс фильтра
+          - type: glance
+            title: Воздух
+            columns: 2
+            entities:
+              - entity: sensor.livingroom_brizer_tvoc
+                name: TVOC
+              - entity: sensor.livingroom_brizer_tvoc_classification
+                name: Качество
+              - entity: sensor.livingroom_brizer_outside_temperature
+                name: Темп. снаружи
+              - entity: sensor.livingroom_brizer_air_quality
+                name: Air Quality
+      - type: grid
+        columns: 1
+        cards:
+          - type: heading
+            heading: Спальня-кабинет — бризер
+            icon: mdi:air-filter
+          - type: entities
+            title: Управление
+            entities:
+              - entity: switch.bedroom_brizer_power
+                name: Питание
+              - entity: select.bedroom_brizer_mode
+                name: Режим
+              - entity: number.bedroom_brizer_speed
+                name: Скорость
+              - entity: select.bedroom_brizer_klapan
+                name: Клапан
+              - entity: number.bedroom_brizer_polojenie_zaslonki
+                name: Положение заслонки
+              - entity: switch.bedroom_brizer_light
+                name: Подсветка экрана
+              - entity: switch.bedroom_brizer_ionizer
+                name: Ионизатор
+              - entity: switch.bedroom_brizer_filter_reset
+                name: Сброс фильтра
+          - type: glance
+            title: Воздух
+            columns: 2
+            entities:
+              - entity: sensor.bedroom_brizer_tvoc
+                name: TVOC
+              - entity: sensor.bedroom_brizer_tvoc_classification
+                name: Качество
+              - entity: sensor.bedroom_brizer_outside_temperature
+                name: Темп. снаружи
+              - entity: sensor.bedroom_brizer_air_quality
+                name: Air Quality
+      - type: grid
+        columns: 1
+        cards:
+          - type: heading
+            heading: Детская — бризер
+            icon: mdi:air-filter
+          - type: entities
+            title: Управление
+            entities:
+              - entity: switch.childrenroom_brizer_power
+                name: Питание
+              - entity: select.childrenroom_brizer_mode
+                name: Режим
+              - entity: number.childrenroom_brizer_speed
+                name: Скорость
+              - entity: select.childrenroom_brizer_klapan
+                name: Клапан
+              - entity: number.childrenroom_brizer_polojenie_zaslonki
+                name: Положение заслонки
+              - entity: switch.childrenroom_brizer_light
+                name: Подсветка экрана
+              - entity: switch.childrenroom_brizer_ionizer
+                name: Ионизатор
+              - entity: switch.childrenroom_brizer_filter_reset
+                name: Сброс фильтра
+          - type: glance
+            title: Воздух
+            columns: 2
+            entities:
+              - entity: sensor.childrenroom_brizer_tvoc
+                name: TVOC
+              - entity: sensor.childrenroom_brizer_tvoc_classification
+                name: Качество
+              - entity: sensor.childrenroom_brizer_outside_temperature
+                name: Темп. снаружи
+              - entity: sensor.childrenroom_brizer_air_quality
+                name: Air Quality
