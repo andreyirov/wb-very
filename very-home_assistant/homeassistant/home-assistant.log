@@ -1,7 +1,0 @@
-2026-06-01 23:55:11.991 WARNING (Recorder) [homeassistant.components.recorder.util] The system could not validate that the sqlite3 database at //config/home-assistant_v2.db was shutdown cleanly
-2026-06-01 23:55:12.072 WARNING (Recorder) [homeassistant.components.recorder.util] Ended unfinished session (id=25 from 2026-06-01 20:50:04.299078)
-2026-06-01 23:55:22.644 WARNING (SyncWorker_0) [py.warnings] /usr/local/lib/python3.14/site-packages/rich/segment.py:547: SyntaxWarning: 'return' in a 'finally' block
-  return
-
-2026-06-01 23:55:36.984 WARNING (MainThread) [aioesphomeapi.reconnect_logic] Can't connect to ESPHome API for livingroom_brizer @ 192.168.180.12: Error connecting to [AddrInfo(family=<AddressFamily.AF_INET: 2>, type=<SocketKind.SOCK_STREAM: 1>, proto=6, sockaddr=IPv4Sockaddr(address='192.168.180.12', port=6053))]: [Errno 113] Connect call failed ('192.168.180.12', 6053) (SocketAPIError)
-2026-06-01 23:56:14.400 WARNING (MainThread) [homeassistant.bootstrap] Waiting for integrations to complete setup: {('radio_browser', '01K5H6QHZSMHJ653P4WD16TBF9'): 1139696.515559785}

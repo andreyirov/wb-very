@@ -3,3 +3,7 @@
 
 # ESPHome build cache / artifacts
 .esphome/
+
+# Home Assistant runtime state (rewritten by HA at runtime, not config)
+very-home_assistant/homeassistant/home-assistant_v2.db*
+very-home_assistant/homeassistant/home-assistant.log*
