@@ -63,7 +63,7 @@ mqtt:
       - "wirenboard_wb-led_16_w4"
       manufacturer: Wiren Board
       model: WB-LED 16
-      suggested_area: Ванна
+      suggested_area: Ванная
   -
     brightness_scale: 100
     payload_on: '1'
@@ -192,7 +192,7 @@ mqtt:
       - "wirenboard_wb-led_48_cct2"
       manufacturer: Wiren Board
       model: WB-LED 48
-      suggested_area: Спальня
+      suggested_area: Спальня-кабинет
   -
     brightness_scale: 100
     payload_on: '1'
@@ -210,7 +210,7 @@ mqtt:
       - "wirenboard_wb-mdm3_109_k2"
       manufacturer: Wiren Board
       model: WB-MDM3 109
-      suggested_area: Спальня
+      suggested_area: Спальня-кабинет
   -
     brightness_scale: 100
     payload_on: '1'
@@ -228,7 +228,7 @@ mqtt:
       - "wirenboard_wb-mdm3_209_k3"
       manufacturer: Wiren Board
       model: WB-MDM3 209
-      suggested_area: Кабинет
+      suggested_area: Спальня-кабинет
   -
     brightness_scale: 100
     payload_on: '1'
@@ -246,7 +246,7 @@ mqtt:
       - "wirenboard_wb-led_47_ch3"
       manufacturer: Wiren Board
       model: WB-LED 47
-      suggested_area: Кабинет
+      suggested_area: Спальня-кабинет
   -
     brightness_scale: 100
     payload_on: '1'
@@ -264,7 +264,7 @@ mqtt:
       - "wirenboard_wb-mdm3_209_k1"
       manufacturer: Wiren Board
       model: WB-MDM3 209
-      suggested_area: Спальня
+      suggested_area: Спальня-кабинет
   -
     brightness_scale: 100
     payload_on: '1'
@@ -282,7 +282,7 @@ mqtt:
       - "wirenboard_wb-mdm3_209_k2"
       manufacturer: Wiren Board
       model: WB-MDM3 209
-      suggested_area: Спальня
+      suggested_area: Спальня-кабинет
   -
     brightness_scale: 100
     payload_on: '1'
@@ -422,7 +422,7 @@ mqtt:
       - "wirenboard_wb-mdm3_175_k1"
       manufacturer: Wiren Board
       model: WB-MDM3 175
-      suggested_area: Ванна
+      suggested_area: Ванная
   -
     brightness_scale: 100
     payload_on: '1'
@@ -440,4 +440,4 @@ mqtt:
       - "wirenboard_wb-mdm3_118_k3"
       manufacturer: Wiren Board
       model: WB-MDM3 118
-      suggested_area: Постирочная
+      suggested_area: Прачечная

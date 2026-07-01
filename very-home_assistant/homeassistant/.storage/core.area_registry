@@ -8,53 +8,27 @@
         "aliases": [],
         "floor_id": null,
         "humidity_entity_id": null,
-        "icon": null,
-        "id": "gostinaia",
+        "icon": "mdi:sofa-outline",
+        "id": "kukhnia_gostinaia",
         "labels": [],
-        "name": "Гостиная",
+        "name": "Кухня-гостиная",
         "picture": null,
         "temperature_entity_id": null,
         "created_at": "2025-09-19T14:38:16.005262+00:00",
-        "modified_at": "2025-09-19T14:38:16.005282+00:00"
+        "modified_at": "2026-07-01T11:00:00.000000+00:00"
       },
       {
         "aliases": [],
         "floor_id": null,
         "humidity_entity_id": null,
-        "icon": null,
-        "id": "kukhnia",
+        "icon": "mdi:bed-king-outline",
+        "id": "spalnia_kabinet",
         "labels": [],
-        "name": "Кухня",
-        "picture": null,
-        "temperature_entity_id": null,
-        "created_at": "2025-09-19T14:38:16.005695+00:00",
-        "modified_at": "2025-09-19T14:38:16.005702+00:00"
-      },
-      {
-        "aliases": [],
-        "floor_id": null,
-        "humidity_entity_id": null,
-        "icon": null,
-        "id": "spalnia",
-        "labels": [],
-        "name": "Спальня",
+        "name": "Спальня-кабинет",
         "picture": null,
         "temperature_entity_id": null,
         "created_at": "2025-09-19T14:38:16.005858+00:00",
-        "modified_at": "2025-09-19T14:38:16.005863+00:00"
-      },
-      {
-        "aliases": [],
-        "floor_id": null,
-        "humidity_entity_id": null,
-        "icon": "mdi:desk",
-        "id": "kabinet",
-        "labels": [],
-        "name": "Кабинет",
-        "picture": null,
-        "temperature_entity_id": null,
-        "created_at": "2026-06-02T12:00:00.000000+00:00",
-        "modified_at": "2026-06-02T12:00:00.000000+00:00"
+        "modified_at": "2026-07-01T11:00:00.000000+00:00"
       },
       {
         "aliases": [],
@@ -67,7 +41,33 @@
         "picture": null,
         "temperature_entity_id": null,
         "created_at": "2026-06-02T12:00:00.000000+00:00",
-        "modified_at": "2026-06-02T12:00:00.000000+00:00"
+        "modified_at": "2026-07-01T11:00:00.000000+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": null,
+        "humidity_entity_id": null,
+        "icon": "mdi:shower-head",
+        "id": "vannaya",
+        "labels": [],
+        "name": "Ванная",
+        "picture": null,
+        "temperature_entity_id": null,
+        "created_at": "2026-06-02T12:00:00.000000+00:00",
+        "modified_at": "2026-07-01T11:00:00.000000+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": null,
+        "humidity_entity_id": null,
+        "icon": "mdi:washing-machine",
+        "id": "prachechnaia",
+        "labels": [],
+        "name": "Прачечная",
+        "picture": null,
+        "temperature_entity_id": null,
+        "created_at": "2026-06-02T12:00:00.000000+00:00",
+        "modified_at": "2026-07-01T11:00:00.000000+00:00"
       },
       {
         "aliases": [],
@@ -80,33 +80,7 @@
         "picture": null,
         "temperature_entity_id": null,
         "created_at": "2026-06-02T12:00:00.000000+00:00",
-        "modified_at": "2026-06-02T12:00:00.000000+00:00"
-      },
-      {
-        "aliases": [],
-        "floor_id": null,
-        "humidity_entity_id": null,
-        "icon": "mdi:shower-head",
-        "id": "vanna",
-        "labels": [],
-        "name": "Ванна",
-        "picture": null,
-        "temperature_entity_id": null,
-        "created_at": "2026-06-02T12:00:00.000000+00:00",
-        "modified_at": "2026-06-02T12:00:00.000000+00:00"
-      },
-      {
-        "aliases": [],
-        "floor_id": null,
-        "humidity_entity_id": null,
-        "icon": "mdi:washing-machine",
-        "id": "postirochnaia",
-        "labels": [],
-        "name": "Постирочная",
-        "picture": null,
-        "temperature_entity_id": null,
-        "created_at": "2026-06-02T12:00:00.000000+00:00",
-        "modified_at": "2026-06-02T12:00:00.000000+00:00"
+        "modified_at": "2026-07-01T11:00:00.000000+00:00"
       }
     ]
   }

@@ -1,13 +1,12 @@
-# Панель управления светом Wiren Board
-
-title: Свет
+# Панель управления светом Wiren Board — сгруппировано по помещениям
+title: Освещение
 views:
-  - title: Дом
-    path: dom
-    icon: mdi:home-lightbulb-outline
+  - title: Освещение
+    path: osveshchenie
+    icon: mdi:lightbulb-group-outline
     theme: wb_svet
     type: sections
-    max_columns: 2
+    max_columns: 3
     sections:
       - type: grid
         columns: 1
@@ -98,24 +97,23 @@ views:
         columns: 1
         cards:
           - type: heading
-            heading: Спальня
+            heading: Спальня-кабинет
             icon: mdi:bed-king-outline
           - type: grid
             columns: 2
             square: false
             cards:
               - type: tile
-                entity: light.spalnia_shtory
-                name: Шторы
-                icon: mdi:curtains
+                entity: light.spalnia_liustra
+                name: Люстра спальня
+                icon: mdi:chandelier
                 vertical: true
                 features:
                   - type: light-brightness
-                  - type: light-color-temp
               - type: tile
-                entity: light.spalnia_liustra
-                name: Люстра
-                icon: mdi:chandelier
+                entity: light.spalnia_shtory
+                name: Шторы спальня
+                icon: mdi:curtains
                 vertical: true
                 features:
                   - type: light-brightness
@@ -127,7 +125,6 @@ views:
                 vertical: true
                 features:
                   - type: light-brightness
-                  - type: light-color-temp
               - type: tile
                 entity: light.prikrovatnyi_okno
                 name: У окна
@@ -135,33 +132,20 @@ views:
                 vertical: true
                 features:
                   - type: light-brightness
-                  - type: light-color-temp
-      - type: grid
-        columns: 1
-        cards:
-          - type: heading
-            heading: Кабинет
-            icon: mdi:desk
-          - type: grid
-            columns: 2
-            square: false
-            cards:
               - type: tile
                 entity: light.kabinet_potolok
-                name: Потолок
+                name: Потолок кабинет
                 icon: mdi:ceiling-light
                 vertical: true
                 features:
                   - type: light-brightness
-                  - type: light-color-temp
               - type: tile
                 entity: light.kabinet_stol
-                name: Стол
+                name: Стол кабинет
                 icon: mdi:desk-lamp
                 vertical: true
                 features:
                   - type: light-brightness
-                  - type: light-color-temp
       - type: grid
         columns: 1
         cards:
@@ -187,7 +171,6 @@ views:
                 vertical: true
                 features:
                   - type: light-brightness
-                  - type: light-color-temp
               - type: tile
                 entity: light.detskaia_rabochaia_zona
                 name: Рабочая зона
@@ -195,7 +178,6 @@ views:
                 vertical: true
                 features:
                   - type: light-brightness
-                  - type: light-color-temp
               - type: tile
                 entity: light.detskaia_stena
                 name: Стена
@@ -203,12 +185,52 @@ views:
                 vertical: true
                 features:
                   - type: light-brightness
-                  - type: light-color-temp
       - type: grid
         columns: 1
         cards:
           - type: heading
-            heading: Коридор · санузел
+            heading: Ванная
+            icon: mdi:shower-head
+          - type: grid
+            columns: 2
+            square: false
+            cards:
+              - type: tile
+                entity: light.vanna_potolok
+                name: Потолок
+                icon: mdi:ceiling-light
+                vertical: true
+                features:
+                  - type: light-brightness
+              - type: tile
+                entity: light.vannaya_podsvetka
+                name: Подсветка
+                icon: mdi:led-strip-variant
+                vertical: true
+                features:
+                  - type: light-brightness
+      - type: grid
+        columns: 1
+        cards:
+          - type: heading
+            heading: Прачечная
+            icon: mdi:washing-machine
+          - type: grid
+            columns: 2
+            square: false
+            cards:
+              - type: tile
+                entity: light.postirochnaia_potolok
+                name: Потолок
+                icon: mdi:ceiling-light
+                vertical: true
+                features:
+                  - type: light-brightness
+      - type: grid
+        columns: 1
+        cards:
+          - type: heading
+            heading: Коридор
             icon: mdi:door-sliding
           - type: grid
             columns: 2
@@ -216,7 +238,7 @@ views:
             cards:
               - type: tile
                 entity: light.koridor_podsvetka
-                name: Коридор LED
+                name: Подсветка
                 icon: mdi:led-strip-variant
                 vertical: true
                 features:
@@ -224,113 +246,8 @@ views:
                   - type: light-color-temp
               - type: tile
                 entity: light.koridor_potolok
-                name: Коридор потолок
+                name: Потолок
                 icon: mdi:ceiling-light
                 vertical: true
                 features:
                   - type: light-brightness
-                  - type: light-color-temp
-              - type: tile
-                entity: light.vanna_potolok
-                name: Ванна
-                icon: mdi:shower-head
-                vertical: true
-                features:
-                  - type: light-brightness
-                  - type: light-color-temp
-              - type: tile
-                entity: light.vannaya_podsvetka
-                name: Ванна подсветка
-                icon: mdi:led-strip-variant
-                vertical: true
-                features:
-                  - type: light-brightness
-              - type: tile
-                entity: light.postirochnaia_potolok
-                name: Постирочная
-                icon: mdi:washing-machine
-                vertical: true
-                features:
-                  - type: light-brightness
-                  - type: light-color-temp
-
-  - title: Комнаты
-    path: komnaty
-    icon: mdi:floor-plan
-    theme: wb_svet
-    type: masonry
-    cards:
-      - type: glance
-        title: Кухня-гостиная
-        entities:
-          - light.kukhnia_vitrina
-          - light.kukhnia_zona_gotovki
-          - light.kukhnia_potolok
-          - light.gostinaia_potolok
-          - light.gostinaia_liustra_stol
-          - light.gostinaia_shtory_okno2
-          - light.gostinaia_shtory_okno3
-        state_color: true
-      - type: glance
-        title: Спальня
-        entities:
-          - light.spalnia_shtory
-          - light.spalnia_liustra
-          - light.prikrovatnyi_stena
-          - light.prikrovatnyi_okno
-        state_color: true
-      - type: glance
-        title: Кабинет
-        entities:
-          - light.kabinet_potolok
-          - light.kabinet_stol
-        state_color: true
-      - type: glance
-        title: Детская
-        entities:
-          - light.detskaia_shtory
-          - light.detskaia_liustra
-          - light.detskaia_rabochaia_zona
-          - light.detskaia_stena
-        state_color: true
-      - type: glance
-        title: Коридор и прочее
-        entities:
-          - light.koridor_podsvetka
-          - light.koridor_potolok
-          - light.vanna_potolok
-          - light.vannaya_podsvetka
-          - light.postirochnaia_potolok
-        state_color: true
-  - title: Детально
-    path: detail
-    icon: mdi:tune-vertical
-    theme: wb_svet
-    type: panel
-    cards:
-      - type: entities
-        title: Все линии света
-        show_header_toggle: true
-        entities:
-          - light.kukhnia_vitrina
-          - light.kukhnia_zona_gotovki
-          - light.kukhnia_potolok
-          - light.gostinaia_potolok
-          - light.gostinaia_liustra_stol
-          - light.gostinaia_shtory_okno2
-          - light.gostinaia_shtory_okno3
-          - light.spalnia_shtory
-          - light.spalnia_liustra
-          - light.prikrovatnyi_stena
-          - light.prikrovatnyi_okno
-          - light.kabinet_potolok
-          - light.kabinet_stol
-          - light.detskaia_shtory
-          - light.detskaia_liustra
-          - light.detskaia_rabochaia_zona
-          - light.detskaia_stena
-          - light.koridor_podsvetka
-          - light.koridor_potolok
-          - light.vanna_potolok
-          - light.vannaya_podsvetka
-          - light.postirochnaia_potolok

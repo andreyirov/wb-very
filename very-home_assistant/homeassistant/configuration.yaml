@@ -13,10 +13,16 @@ lovelace:
   dashboards:
     lovelace-svet:
       mode: yaml
-      title: Свет
+      title: Освещение
       icon: mdi:lightbulb-group-outline
       show_in_sidebar: true
       filename: dashboards/svet.yaml
+    lovelace-klimat:
+      mode: yaml
+      title: Климат
+      icon: mdi:air-filter
+      show_in_sidebar: true
+      filename: dashboards/klimat.yaml
 
 automation: !include automations.yaml
 script: !include scripts.yaml
